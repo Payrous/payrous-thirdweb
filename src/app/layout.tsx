@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Mulish, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { ThirdwebProvider } from "thirdweb/react";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Mulish({ 
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+ });
+
+ const sourceSansPro = Source_Sans_3({
+  variable: "--font-source-sans-pro",
+  subsets: ["latin"],
+}); 
 
 export const metadata: Metadata = {
-  title: "thirdweb SDK + Next starter",
+  title: "PAYROUS",
   description:
     "Starter template for using thirdweb SDK with Next.js App router",
 };
