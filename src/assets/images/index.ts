@@ -10,7 +10,8 @@ import elipse2 from "@/assets/images/ellipse2.png"
 import elipse3 from "@/assets/images/ellipse3.png"
 import faqbg from "@/assets/images/faqbg.png"
 import sponsors from "@/assets/images/sponsors.png"
-
+import test1 from "@/assets/images/test1.png"
+import test2 from "@/assets/images/test2.png"
 
 export{
     frame1,
@@ -25,4 +26,6 @@ export{
     elipse3,
     faqbg,
     sponsors,
+    test1,
+    test2,
 }

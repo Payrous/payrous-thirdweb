@@ -33,18 +33,24 @@ const Testimonials = () => {
                         {testimonials.map((testimonial) => (
                             <CarouselItem key={testimonial.id} className="basis-1/2">
                                 <div className="p-1">
-                                    <Card className={`${testimonial.color} transition-colors duration-300 shadow-sm hover:shadow-lg`}>
-                                        <CardContent className="flex flex-col items-center justify-center p-6">
-                                            <Image
-                                                src={testimonial.image || "/placeholder.svg"}
-                                                alt={testimonial.name}
-                                                width={100}
-                                                height={100}
-                                                className="rounded-full mb-4"
-                                            />
-                                            <h3 className="text-lg font-semibold">{testimonial.name}</h3>
-                                            <p className="text-sm text-muted-foreground mb-2">{testimonial.role}</p>
-                                            <p className="text-sm text-center italic">"{testimonial.quote}"</p>
+                                    <Card className={`${testimonial.color} transition-colors duration-300 hover:shadow-lg`}>
+                                        <CardContent className="flex flex-col items-center justify-center px-6 py-10 font-source text-left">
+                                            <p className="text-sm text-left italic text-colors-BlueGray">"{testimonial.quote}"</p>
+                                            <div className='flex items-center gap-3 py-2'>
+                                                <Image
+                                                    src={testimonial.image || "/placeholder.svg"}
+                                                    alt={testimonial.name}
+                                                    width={40}
+                                                    height={40}
+                                                    className="rounded-full"
+                                                />
+
+                                                <div>
+                                                    <h3 className="text-base text-colors-BlueGray font-semibold">{testimonial.name}</h3>
+                                                    <p className="text-sm text-gray-400 text-muted-foreground">{testimonial.role}</p>
+                                                </div>
+                                            </div>
+
                                         </CardContent>
                                     </Card>
                                 </div>
@@ -52,8 +58,8 @@ const Testimonials = () => {
                         ))}
                     </CarouselContent>
                     <div className="flex mt-4 space-x-2">
-                        <CarouselPrevious className="relative left-0 top-0 translate-y-0 h-8 w-8" />
-                        <CarouselNext className="relative left-0 top-0 translate-y-0 h-8 w-8" />
+                        <CarouselPrevious className="relative left-0 right-0 top-0 translate-y-0 h-8 w-8" />
+                        <CarouselNext className="relative left-0 right-0 top-0 translate-y-0 h-8 w-8" />
                     </div>
                 </Carousel>
             </div>
