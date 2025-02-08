@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from './ui/button'
 import Image from 'next/image'
 import { elipse2, elipse3 } from '@/assets/images'
+import { GoArrowRight } from "react-icons/go";
 
 const Transaction = () => {
     return (
@@ -35,9 +36,10 @@ const Transaction = () => {
                 </div>
                 <Button
                     type='submit'
-                    className='text-white w-full md:w-40 bg-colors-ButtonOrange shadow-slate-200 px-8 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-lg'
+                    className='text-white w-full md:w-40 bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-8 py-4 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-lg'
                 >
                     Try payrous free
+                    <GoArrowRight />
                 </Button>
             </div>
         </div>
