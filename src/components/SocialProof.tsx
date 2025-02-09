@@ -7,6 +7,9 @@ import icon1 from '@/assets/icons/icon1.svg'
 import icon2 from '@/assets/icons/icon2.svg'
 import icon3 from '@/assets/icons/icon3.svg'
 import icon4 from '@/assets/icons/icon4.svg'
+import * as framer from 'framer-motion'
+import * as motion from "motion/react-client"
+
 
 
 const propCardsData = [
@@ -32,11 +35,14 @@ const SocialProof = () => {
     return (
         <div className=''>
             <div className='bg-white py-3 flex items-center justify-center w-full'>
-                <Image src={sponsors} alt='sponsors'/>
-            </div>
+                <Image src={sponsors} alt='sponsors' />
+                </div>
+        
 
             {/* offerpage */}
-            <div className='bg-slate-50  px-8 py-4 md:px-40 md:py-10  flex flex-col justify-center items-center'>
+            <div
+               
+                className='bg-slate-50  px-8 py-4 md:px-40 md:py-10  flex flex-col justify-center items-center' >
                 <div className='py-12 px-10 bg-orange-100 relative h-full w-full rounded-2xl'>
                     <Image
                         alt=""
@@ -64,9 +70,9 @@ const SocialProof = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-
         </div>
+
+        </div >
     )
 }
 

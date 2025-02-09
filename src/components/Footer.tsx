@@ -35,7 +35,7 @@ const Footer = () => {
                     <ul className='flex flex-col gap-2'>
                         <li className='hover:text-orange-300 cursor-pointer flex items-center gap-1'><span><FaDiscord /></span>Discord</li>
                         <li className='hover:text-orange-300 cursor-pointer flex items-center gap-1'><span><BsTwitterX /></span>Twitter</li>
-                        <li className='hover:text-orange-300 cursor-pointer flex items-center gap-1'><Image src={warpcastlogo} alt='warpcast' className='w-5 h-5'/>Warpcast</li>
+                        <li className='hover:text-orange-300 cursor-pointer flex items-center gap-1'><span><Image src={warpcastlogo} alt='warpcast' className='w-5 h-5'/></span>Warpcast</li>
                     </ul>
                 </div>
             </div>

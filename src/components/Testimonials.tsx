@@ -34,9 +34,9 @@ const Testimonials = () => {
                             <CarouselItem key={testimonial.id} className="basis-1/2">
                                 <div className="p-1">
                                     <Card className={`${testimonial.color} transition-colors duration-300 hover:shadow-lg`}>
-                                        <CardContent className="flex flex-col items-center justify-center px-6 py-10 font-source text-left">
+                                        <CardContent className="flex flex-col items-center justify-center px-6 py-14 gap-4 font-source text-left">
                                             <p className="text-sm text-left italic text-colors-BlueGray">"{testimonial.quote}"</p>
-                                            <div className='flex items-center gap-3 py-2'>
+                                            <div className='flex items-left -px-3 gap-3'>
                                                 <Image
                                                     src={testimonial.image || "/placeholder.svg"}
                                                     alt={testimonial.name}
@@ -57,7 +57,7 @@ const Testimonials = () => {
                             </CarouselItem>
                         ))}
                     </CarouselContent>
-                    <div className="flex mt-4 space-x-2">
+                    <div className="flex mt-4 space-x-2 items-center">
                         <CarouselPrevious className="relative left-0 right-0 top-0 translate-y-0 h-8 w-8" />
                         <CarouselNext className="relative left-0 right-0 top-0 translate-y-0 h-8 w-8" />
                     </div>

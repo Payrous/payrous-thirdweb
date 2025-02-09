@@ -1,5 +1,8 @@
-import Image from 'next/image';
+'use client'; // Mark this component as a Client Component
+
 import React from 'react';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface PropCardProps {
   icon: string;
@@ -8,10 +11,14 @@ interface PropCardProps {
 
 const PropCard: React.FC<PropCardProps> = ({ icon, description }) => {
   return (
-    <div className='bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out flex flex-col items-center p-6 gap-4 text-center relative z-20 justify-center'>
-      <Image src={icon} alt='icon' className='w-12 h-12 md:w-16 md:h-16' />
+    <motion.div
+      whileHover={{ scale: 0.8 }}
+      whileTap={{ scale: 0.4 }}
+      className='bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out flex flex-col items-center p-6 gap-4 text-center relative z-20 justify-center'
+    >
+      <Image src={icon} alt='icon' width={64} height={64} className='w-12 h-12 md:w-16 md:h-16' />
       <p className='text-sm md:text-base font-source text-colors-BlueGray'>{description}</p>
-    </div>
+    </motion.div>
   );
 };
 
