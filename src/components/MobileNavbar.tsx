@@ -44,7 +44,7 @@ const MobileNavbar = () => {
 
           <button 
             onClick={toggleMenu} 
-            className='p-2 rounded-md bg-slate-50 hover:bg-gray-100 transition-all'
+            className='p-2 rounded-lg bg-slate-50 hover:bg-gray-100 transition-all'
           >
             {isMenuOpen ? (
               <FaTimes className="h-5 w-5 md:w-8 md:h-8 text-gray-700" /> 
