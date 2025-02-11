@@ -9,8 +9,8 @@ import how_it_works from '@/app/how-it-works/page';
 
 const Navbar = () => {
   return (
-    <div className='hidden py-10 px-0 md:flex justify-center items-center w-full'>
-      <div className='bg-white flex p-4 rounded-xl w-full max-w-[1160px] h-[80px]'>
+    <div className='hidden md:hidden py-10 px-0 lg:flex justify-center items-center w-full'>
+      <div className='bg-white flex p-5 rounded-xl w-full h-[80px] justify-center items-center'>
         <nav className='flex items-center justify-between w-full'>
          
           <Image src={payrous_logo} alt="payrous logo" className='w-24' />

@@ -12,17 +12,19 @@ import MobileNavbar from '@/components/MobileNavbar'
 
 const Payrous = () => {
   return (
-    <div className='bg-colors-BlueGray px-4 md:px-40 text-o'>
+    <div className='bg-colors-BlueGray px-4 md:px-12 lg:px-32 text-o'>
       <Navbar />
-      <MobileNavbar/>
+      <div className='-mx-4'>
+        <MobileNavbar />
+      </div>
       <Hero />
-      <div className='-mx-4 md:-mx-40'>
+      <div className='-mx-4 md:-mx-32'>
         <SocialProof />
-        <Testimonials/>
-        <Faq/>
+        <Testimonials />
+        <Faq />
         {/* <HowItWorks/> */}
         <Transaction />
-        <Footer/>
+        <Footer />
       </div>
 
     </div>
