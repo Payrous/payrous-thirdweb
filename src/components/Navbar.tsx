@@ -9,7 +9,7 @@ import how_it_works from '@/app/how-it-works/page';
 
 const Navbar = () => {
   return (
-    <div className='py-10 px-0 flex justify-center items-center w-full'>
+    <div className='hidden py-10 px-0 md:flex justify-center items-center w-full'>
       <div className='bg-white flex p-4 rounded-xl w-full max-w-[1160px] h-[80px]'>
         <nav className='flex items-center justify-between w-full'>
          
