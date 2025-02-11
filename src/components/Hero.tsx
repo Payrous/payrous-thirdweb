@@ -27,15 +27,15 @@ const Hero = () => {
 
                 </div>
 
-                <div className='flex flex-col md:flex-row gap-3 w-full md:w-20 lg:w-80 pt-0 md:pt-3 '>
+                <div className='flex flex-col md:flex-row gap-3 pt-0 md:pt-4 '>
                     <Button
                         type='submit'
-                        className='text-white w-full md:w-40 bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-7 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-lg'
+                        className='text-white w-full md:w-44 bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-7 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl'
                     >
                         Try payrous free
                         <GoArrowRight />
                     </Button>
-                    <Button className='border border-orange-400 hover:bg-white hover:border-none bg-colors-BlueGray bg-none w-full md:w-40 text-colors-ButtonOrange px-5 py-7 rounded-lg'>
+                    <Button className='border border-orange-400 hover:bg-white hover:border-none bg-colors-BlueGray bg-none w-full md:w-44 text-colors-ButtonOrange px-5 py-7 rounded-xl'>
                         Watch demo
                         <Image src={demo_icon} alt='demo' className='w-4 h-4' />
                     </Button>
@@ -44,8 +44,8 @@ const Hero = () => {
             </div>
 
             <div className='flex flex-col md:flex-row items-center gap-2 py-8'>
-                <Image src={frame1} alt='dashboard-picture' className='w-full' />
-                <Image src={frame2} alt='cube-frame' className='w-full md:w-[450px]' />
+                <Image src={frame1} alt='dashboard-picture' className='w-full md:w-[500px] lg:w-[700px]' />
+                <Image src={frame2} alt='cube-frame' className='w-full md:w-[450px] lg:w-[500px]' />
             </div>
         </div>
     );
