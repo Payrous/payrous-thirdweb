@@ -6,6 +6,7 @@ import frame5 from "@/assets/images/frame5.png"
 import frame6 from "@/assets/images/frame6.png"
 import frame7 from "@/assets/images/frame7.png"
 import frame8 from "@/assets/images/frame8.png"
+import frame8b from "@/assets/images/frame8b.png"
 import elipse2 from "@/assets/images/ellipse2.png"
 import elipse3 from "@/assets/images/ellipse3.png"
 import faqbg from "@/assets/images/faqbg.png"
@@ -22,6 +23,7 @@ export{
     frame6,
     frame7,
     frame8,
+    frame8b,
     elipse2,
     elipse3,
     faqbg,

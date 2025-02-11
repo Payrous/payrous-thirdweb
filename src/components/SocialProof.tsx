@@ -35,15 +35,15 @@ const SocialProof = () => {
     return (
         <div className=''>
             <div className='bg-white py-3 flex items-center justify-center w-full'>
-                <Image src={sponsors} alt='sponsors' className='w-full ' />
-                </div>
+                <Image src={sponsors} alt='sponsors' />
+            </div>
         
 
             {/* offerpage */}
             <div
                
-                className='bg-slate-50  px-6 py-4 md:px-40 md:py-10  flex flex-col justify-center items-center' >
-                <div className='py-12 px-10 bg-orange-100 relative h-full w-full rounded-2xl'>
+                className='bg-slate-50  px-4 py-4 md:px-40 md:py-10  flex flex-col justify-center items-center' >
+                <div className='py-12 px-4 md:px-10 bg-orange-100 relative h-full w-full rounded-2xl'>
                     <Image
                         alt=""
                         src={frame3}
@@ -57,7 +57,7 @@ const SocialProof = () => {
                         className="z-0"
                     />
                     <div className=''>
-                        <div className='text-center md:text-left flex flex-col items-center md:items-start'>
+                        <div className='text-center lg:text-left flex flex-col items-center md:items-start'>
                             <h1 className='relative z-10 font-source font-bold text-colors-BlueGray text-2xl md:text-5xl'>What truly sets us <span className='italic text-colors-ButtonOrange font-geist'>apart</span></h1>
                             <p className='text-sm font-source text-colors-BlueGray py-2'>A solution for efficient, secure, and transparent bulk payment management.</p>
                         </div>

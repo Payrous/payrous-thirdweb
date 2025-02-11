@@ -15,7 +15,7 @@ const Hero = () => {
                         Simplify Your Payroll with
                         <span className='text-colors-ButtonOrange italic font-geist'> Payrous</span>
                     </h1>
-                    <h1 className='text-sm font-extralight text-center md:text-left leading-6 text-white font-geist md:w-2/5 w-full py-6 md:py-0 px-0 lg:px-3'>
+                    <h1 className='text-sm font-extralight text-center md:text-left leading-6 text-white font-geist md:w-2/5 w-full py-6 md:py-0 px-0 lg:px-8'>
                         Revolutionize your payroll experience with Payrous, a cutting-edge
                         blockchain-powered platform that simplifies bulk payment processes.
                         Effortlessly manage and automate payments to multiple recipients

@@ -20,7 +20,7 @@ const Faq = () => {
               className='absolute z-0'
             />
             <div className='text-center'>
-                <h1 className='relative z-10 font-source font-bold text-colors-BlueGray text-xl md:text-5xl'>
+                <h1 className='relative z-10 font-source font-bold text-colors-BlueGray text-2xl md:text-5xl'>
                     Frequently Asked <span className='italic text-colors-ButtonOrange'>Questions</span>
                 </h1>
                 <p className='text-xs md:text-sm font-source text-colors-BlueGray py-2 font'>
@@ -28,7 +28,7 @@ const Faq = () => {
                 </p>
 
             </div>
-            <div className='py-10 w-screen md:w-[900px] relative overflow-hidden'>
+            <div className='px-8 md:px-0 py-10 w-screen md:w-[900px] relative overflow-hidden'>
                 <div className='bg-orange-100 rounded-xl'>
                     <Accordion type="single" collapsible className='px-10 py-10'>
                         <AccordionItem value="item-1">
