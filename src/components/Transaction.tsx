@@ -6,7 +6,7 @@ import { GoArrowRight } from "react-icons/go";
 
 const Transaction = () => {
     return (
-        <div className='bg-slate-50 flex flex-col justify-center items-center p-8 md:p-10 md:px-16 lg:px-32'>
+        <div className='bg-slate-50 flex flex-col justify-center items-center p-8 md:p-10 px-4 md:px-16 lg:px-32'>
             <div className='bg-colors-BlueGray rounded-3xl py-16 px-8 md:py-16 md:px-48 flex flex-col relative items-center md:w-full'>
 
                 <Image

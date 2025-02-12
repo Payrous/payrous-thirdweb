@@ -28,7 +28,7 @@ const Faq = () => {
                 </p>
 
             </div>
-            <div className='px-8 md:px-0 py-10 w-screen md:w-[900px] relative overflow-hidden'>
+            <div className='px-4 md:px-0 py-10 w-screen md:w-[900px] relative overflow-hidden'>
                 <div className='bg-orange-100 rounded-xl'>
                     <Accordion type="single" collapsible className='px-10 py-10'>
                         <AccordionItem value="item-1">

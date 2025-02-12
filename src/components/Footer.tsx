@@ -7,13 +7,13 @@ import { payrous_logo, warpcastlogo } from '@/assets/icons';
 const Footer = () => {
     return (
         <div className='bg-white pt-20 pb-10 px-8 md:px-16 lg:px-32 font-source font-normal flex flex-col gap-10 justify-center items-center'>
-            <div className=' text-colors-BlueGray text-base flex flex-col md:flex-row justify-between text-center md:text-left'>
-                <div className='flex flex-col items-stretch md:items-start'>
-                    <Image src={payrous_logo} alt="payrous logo" className='w-24 pb-3items-center md:items-start' />
-                    <p className=' w-[350px]'>Payrous is a blockchain-powered platform designed to streamline payroll and bulk payment processes by enabling organizations to efficiently handle payments to multiple recipients.</p>
+            <div className=' text-colors-BlueGray text-base flex flex-col md:flex-row justify-between text-center md:text-left gap-8 md:gap-0'>
+                <div className='flex flex-col items-center md:items-start'>
+                    <Image src={payrous_logo} alt="payrous logo" className='w-24 pb-3 items-center md:items-start' />
+                    <p className='w-full md:w-[350px]'>Payrous is a blockchain-powered platform designed to streamline payroll and bulk payment processes by enabling organizations to efficiently handle payments to multiple recipients.</p>
                 </div>
 
-                <div className='flex flex-col md:flex-row gap-5'>
+                <div className='flex flex-col md:flex-row gap-10'>
                     <div className=''>
                         <h1 className='font-semibold pb-3'>Company</h1>
                         <ul className='flex flex-col gap-2'>
@@ -31,7 +31,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className='flex flex-col'>
+                    <div className='flex flex-col items-center md:items-start'>
                         <h1 className='font-semibold pb-3'>Social media</h1>
                         <ul className='flex flex-col gap-2'>
                             <li className='hover:text-orange-300 cursor-pointer flex items-center gap-1'><span><FaDiscord /></span>Discord</li>
