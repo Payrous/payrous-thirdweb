@@ -20,9 +20,9 @@ const Payrous = () => {
       <Hero />
       <div className='-mx-4 md:-mx-32'>
         <SocialProof />
+        <HowItWorks/>
         <Testimonials />
         <Faq />
-        {/* <HowItWorks/> */}
         <Transaction />
         <Footer />
       </div>

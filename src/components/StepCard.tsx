@@ -5,11 +5,12 @@ interface StepCardProps {
   image: StaticImageData;
   title: string;
   description: string;
+  classname?: string;
 }
 
-const StepCard: React.FC<StepCardProps> = ({ image, title, description }) => {
+const StepCard: React.FC<StepCardProps> = ({ image, title, description, classname }) => {
   return (
-    <div className='bg-white rounded-lg font-source text-base text-colors-BlueGray shadow-md hover:shadow-lg relative pt-8'>
+    <div className={`bg-white rounded-lg font-source text-base text-colors-BlueGray shadow-md hover:shadow-lg relative pt-8 ${classname}`}>
       {/* Blurred image at the bottom */}
       <div className="relative flex flex-col items-center">
                 <Image src={image} alt={title} className="" />

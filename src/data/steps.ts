@@ -1,4 +1,11 @@
-export const steps = [
+interface Step {
+    id: number;
+    image: string;
+    step: string;
+    description: string;
+  }
+
+export const steps:Step[] = [
     {
       id: 1,
       image: "/placeholder.svg?height=100&width=100",
