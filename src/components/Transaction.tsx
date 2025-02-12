@@ -6,8 +6,8 @@ import { GoArrowRight } from "react-icons/go";
 
 const Transaction = () => {
     return (
-        <div className='bg-slate-50 flex flex-col justify-center items-center p-8 md:p-10 md:px-32'>
-            <div className='bg-colors-BlueGray rounded-3xl py-6 px-16 md:py-16 md:px-48 flex flex-col relative items-center md:w-full w-80'>
+        <div className='bg-slate-50 flex flex-col justify-center items-center p-8 md:p-10 md:px-16 lg:px-32'>
+            <div className='bg-colors-BlueGray rounded-3xl py-16 px-8 md:py-16 md:px-48 flex flex-col relative items-center md:w-full'>
 
                 <Image
                     alt=""
@@ -26,11 +26,11 @@ const Transaction = () => {
                     quality={100}
                     className="z-0 absolute top-0 right-0 w-40 h-40  md:w-80 md:h-80"
                 />
-                <div className='flex flex-col text-center items-center'>
+                <div className='flex flex-col text-center justify-center items-center'>
                     <h1 className='relative z-10 font-source font-bold text-white text-2xl md:text-5xl'>
                         Start your <span className='italic text-colors-ButtonOrange font-geist'>first transaction</span> today!
                     </h1>
-                    <p className='text-xs md:text-sm font-source text-white py-5 w-full md:w-[600px]'>
+                    <p className='text-sm font-source text-white py-5 w-full md:w-[600px]'>
                         Join thousands of satisfied users who aim to revolutionize how organizations handle payments, ensuring efficiency, cost savings, and security.
                     </p>
                 </div>
