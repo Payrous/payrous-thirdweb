@@ -3,8 +3,6 @@ import React from 'react';
 import { Button } from './ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
-import faq from '@/app/faq/page';
-import how_it_works from '@/app/how-it-works/page';
 
 
 const Navbar = () => {
@@ -16,7 +14,7 @@ const Navbar = () => {
           <Image src={payrous_logo} alt="payrous logo" className='w-24' />
 
          
-          <ul className='flex items-center gap-8 text-sm font-light font-geist cursor-pointer'>
+          <ul className='flex items-center gap-8 text-sm font-light font-geist cursor-pointer text-colors-BlueGray'>
             <li className='text-orange-400'>Features</li>
             <Link href="/how-it-works" className='hover:text-orange-400 hover:underline-offset-2 decoration-2'><li>How it works</li></Link>
             <Link href="/faq" className='hover:text-orange-400 hover:underline-offset-2 decoration-2'><li>FAQs</li></Link>
