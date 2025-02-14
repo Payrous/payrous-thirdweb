@@ -10,10 +10,10 @@ const Footer = () => {
             <div className=' text-colors-BlueGray text-base flex flex-col md:flex-row justify-between text-center md:text-left gap-8 md:gap-0'>
                 <div className='flex flex-col items-center md:items-start'>
                     <Image src={payrous_logo} alt="payrous logo" className='w-24 pb-3 items-center md:items-start' />
-                    <p className='w-full md:w-[350px]'>Payrous is a blockchain-powered platform designed to streamline payroll and bulk payment processes by enabling organizations to efficiently handle payments to multiple recipients.</p>
+                    <p className='w-full md:max-w-[400px] :max-w-[350px]'>Payrous is a blockchain-powered platform designed to streamline payroll and bulk payment processes by enabling organizations to efficiently handle payments to multiple recipients.</p>
                 </div>
 
-                <div className='flex flex-col md:flex-row gap-10 md:gap-20 lg:gap-40'>
+                <div className='flex flex-col md:flex-row gap-10 md:gap-10 lg:gap-40'>
                     <div className=''>
                         <h1 className='font-semibold pb-3'>Company</h1>
                         <ul className='flex flex-col gap-2'>

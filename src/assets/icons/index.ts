@@ -7,6 +7,11 @@ import icon3 from "@/assets/icons/icon3.svg"
 import icon4 from "@/assets/icons/icon4.svg"
 import demo_icon from "@/assets/icons/demo_icon.svg"
 import warpcastlogo from "@/assets/icons/warpcastlogo.svg"
+import bnb_logo from "@/assets/icons/bnb_logo.svg"
+import coinbase_logo from "@/assets/icons/coinbase_logo.svg"
+import metamask_logo from "@/assets/icons/metamask_logo.svg"
+import trust_logo from "@/assets/icons/trust_logo.svg"
+import phantom_logo from "@/assets/icons/phantom_logo.svg"
 
 export{
     payrous_logo,
@@ -18,5 +23,10 @@ export{
     icon4,
     warpcastlogo,
     demo_icon,
+    bnb_logo,
+    coinbase_logo,
+    metamask_logo,
+    trust_logo,
+    phantom_logo
 
 }

@@ -15,15 +15,15 @@ interface StepCardData {
 }
 
 const stepCardsData: StepCardData[] = [
-    { image: frame4, title: "1. Connect your Crypto Wallet", description: "Get started by clicking the connect wallet button on the landing page", classname: "w-full md:max-w-[500px]", imgclassname: "" },
-    { image: frame5, title: "2. Secure Transaction", description: "Create organization where you get to add recipients/employees you are sending funds to", classname: "w-full md:max-w-[750px] md:col-span-2", imgclassname: "px-4 md:px-0 pt-3"},
-    { image: frame6, title: "3. Instant Confirmation", description: "Securely send individual or bulk payments to recipients either instantly or scheduled", classname: "w-full md:max-w-[750px] md:col-span-2", imgclassname: "px-4 md:px-0 pt-1" },
-    { image: frame7, title: "4. Enjoy Your Assets", description: "Assets are securely stored in your connected wallet", classname: "w-full md:max-w-[500px]", imgclassname: "" }
+    { image: frame4, title: "1. Connect your Crypto Wallet", description: "Get started by clicking the connect wallet button on the landing page", classname: "w-full lg:max-w-[500px]", imgclassname: "" },
+    { image: frame5, title: "2. Secure Transaction", description: "Create organization where you get to add recipients/employees you are sending funds to", classname: "w-full lg:max-w-[750px] lg:col-span-2", imgclassname: "px-4 lg:px-0 pt-3"},
+    { image: frame6, title: "3. Instant Confirmation", description: "Securely send individual or bulk payments to recipients either instantly or scheduled", classname: "w-full lg:max-w-[750px] lg:col-span-2", imgclassname: "px-4 lg:px-0 pt-1" },
+    { image: frame7, title: "4. Enjoy Your Assets", description: "Assets are securely stored in your connected wallet", classname: "w-full lg:max-w-[500px]", imgclassname: "" }
 ];
 
 const HowItWorks: React.FC = () => {
     return (
-        <div className='bg-slate-50 flex flex-col justify-center items-center py-8 w-full px-4 md:px-0'>
+        <div className='bg-slate-50 flex flex-col justify-center items-center py-8 w-full px-4 md:px-8 lg:px-0'>
             <div className='text-center'>
                 <h1 className='relative z-10 font-source font-bold text-colors-BlueGray text-xl md:text-5xl'>
                     How it works: A simple <span className='italic text-colors-ButtonOrange font-geist'>Step by Step </span> Guide

@@ -136,16 +136,16 @@ const Payrous = () => {
             </p>
           </div>
 
-          <div className='flex flex-col-reverse md:flex-row items-center justify-center px-0 gap-10'>
+          <div className='flex flex-col-reverse lg:flex-row items-center justify-center px-0 gap-10'>
             <Image
               src={frame8}
               alt='globe'
-              className='left-0 hidden md:flex'
+              className='left-0 hidden lg:flex'
             />
             <Image
               src={frame8b}
               alt='globe'
-              className='left-0 flex md:hidden'
+              className='left-0 flex lg:hidden'
             />
             <Carousel
               opts={{
