@@ -22,7 +22,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({ logo, description, onFocu
 
     return (
         <button
-            className='bg-white ring-2 hover:bg-white rounded-md ring-slate-100 focus:ring-2 focus:ring-orange-300 w-full md:w-[400px]'
+            className='bg-white ring-2 hover:bg-white rounded-md ring-slate-100 focus:ring-2 focus:ring-orange-300 w-[320px] md:w-[400px]'
             onFocus={handleFocus}
             onBlur={handleBlur}
         >

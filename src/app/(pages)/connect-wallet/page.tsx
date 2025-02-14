@@ -14,10 +14,10 @@ const ConnectWallet: React.FC = () => {
 
     return (
         <div className='w-full bg-white'>
-            <div className="text-colors-BlueGray font-source flex flex-col justify-center items-center h-screen w-full px-4 py-8 md:px-16 md:py-0 lg:px-32 lg:py-0">
+            <div className="text-colors-BlueGray font-source flex flex-col justify-center items-center h-screen w-full px-4 py-14 md:px-16 md:py-0 lg:px-32 lg:py-0">
                 <div className='text-center'>
                     <h1 className='font-bold text-xl'>Connect Wallet</h1>
-                    <p className='w-[400px] text-lg'>By connecting your wallet, you agree to our <span className='text-colors-ButtonOrange'>Terms of Service</span> and our <span className='text-colors-ButtonOrange'>Privacy Policy</span></p>
+                    <p className=' w-[340px] md:w-[400px] text-lg'>By connecting your wallet, you agree to our <span className='text-colors-ButtonOrange'>Terms of Service</span> and our <span className='text-colors-ButtonOrange'>Privacy Policy</span></p>
                 </div>
 
                 <div className='py-5 grid grid-cols-1 gap-4'>
@@ -31,7 +31,7 @@ const ConnectWallet: React.FC = () => {
                 <div className='py-5'>
                     <Button
                         type='submit'
-                        className={`text-white w-[400px] bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 p-5 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-lg`}
+                        className={`text-white w-[320px] md:w-[400px] bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 p-5 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-lg`}
                         disabled={!isAnyFocused} // Disable button if not focused
                     >
                         Continue
