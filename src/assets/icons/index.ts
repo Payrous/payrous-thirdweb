@@ -16,6 +16,7 @@ import org_icon from "@/assets/icons/org_icon.svg"
 import dashboard_icon from "@/assets/icons/dashboard_icon.svg"
 import payment_icon from "@/assets/icons/payment_icon.svg"
 import transact_icon from "@/assets/icons/transact_icon.svg"
+import search from "@/assets/icons/search.svg"
 
 export{
     payrous_logo,
@@ -35,6 +36,7 @@ export{
     org_icon,
     dashboard_icon,
     payment_icon,
-    transact_icon
+    transact_icon,
+    search,
 
 }

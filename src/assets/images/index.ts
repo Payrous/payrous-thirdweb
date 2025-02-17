@@ -13,6 +13,7 @@ import faqbg from "@/assets/images/faqbg.png"
 import sponsors from "@/assets/images/sponsors.svg"
 import test1 from "@/assets/images/test1.png"
 import test2 from "@/assets/images/test2.png"
+import avatar from "@/assets/images/avatar.svg"
 
 export{
     frame1,
@@ -30,4 +31,5 @@ export{
     sponsors,
     test1,
     test2,
+    avatar,
 }

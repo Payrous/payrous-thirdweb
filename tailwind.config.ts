@@ -76,7 +76,9 @@ const config: Config = {
 					colors: {
 						BlueGray: '#304352',
 						ButtonOrange: '#D98837',
-						DarkGray: '#A1A1A1'
+						DarkGray: '#A1A1A1',
+						OffWhite: '#F7F5EF',
+						Success: '#399320'
 					}
 				},
 				keyframes: {

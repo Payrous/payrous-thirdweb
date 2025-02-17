@@ -3,9 +3,8 @@ import React from 'react'
 
 const Dashboard = () => {
   return (
-    <div className='bg-white text-colors-BlueGray'>
+    <div className=' text-colors-BlueGray'>
       Hello Dashboard
-      <Button>Do not Press!</Button>
     </div>
   )
 }

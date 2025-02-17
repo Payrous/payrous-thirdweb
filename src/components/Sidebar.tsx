@@ -32,7 +32,7 @@ const Sidebar = () => {
       <div>
         <h1 className='text-sm'>Connected to</h1>
         <h2 className='font-semibold py-1 text-sm'>Ethereum Mainnet</h2>
-        <p className='text-green-600 font-semibold '>0x73f7...dd58</p>
+        <p className='text-colors-Success font-semibold '>0x73f7...dd58</p>
         <div className='py-4'>
           <button className='rounded-full border border-red-600 text-red-600 py-2 px-10'
           >Disconnect

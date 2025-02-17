@@ -6,17 +6,16 @@ interface DashboardLayoutProps {
   children: React.ReactNode
 }
 
-const DashboardLayout: React.FC<DashboardLayoutProps> = ({children}) => {
+const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   return (
-    <div className='bg-white'>
+    <div className='bg-colors-OffWhite'>
       <div className='flex h-screen overflow-hidden'>
-          <Sidebar />
+        <Sidebar />
         <div className='relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden'>
-
           <Header />
-        <main className='p-1 mx-auto max-w-screen-2xl md:p-5 2xl:p-10'>
-          <div>{children}</div>
-        </main>
+          <main className='p-1 mx-auto max-w-screen-2xl md:p-5 2xl:p-10'>
+            <div>{children}</div>
+          </main>
         </div>
 
       </div>
