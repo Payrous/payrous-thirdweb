@@ -8,7 +8,7 @@ interface DashboardLayoutProps {
 
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({children}) => {
   return (
-    <div>
+    <div className='bg-white'>
       <div className='flex h-screen overflow-hidden'>
           <Sidebar />
         <div className='relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden'>

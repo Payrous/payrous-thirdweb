@@ -3,7 +3,7 @@ import React from 'react'
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className='bg-white text-colors-BlueGray'>
       Hello Dashboard
       <Button>Do not Press!</Button>
     </div>
