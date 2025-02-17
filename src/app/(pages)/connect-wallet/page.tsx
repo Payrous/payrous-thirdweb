@@ -14,13 +14,13 @@ const ConnectWallet: React.FC = () => {
 
     return (
         <div className='w-full bg-white'>
-            <div className="text-colors-BlueGray font-source flex flex-col justify-center items-center h-screen w-full px-4 py-14 md:px-16 md:py-0 lg:px-32 lg:py-0">
+            <div className="text-colors-BlueGray font-geist flex flex-col justify-center items-center h-screen w-full px-4 py-14 md:px-16 md:py-0 lg:px-32 lg:py-0">
                 <div className='text-center'>
-                    <h1 className='font-bold text-xl'>Connect Wallet</h1>
-                    <p className=' w-[340px] md:w-[400px] text-lg'>By connecting your wallet, you agree to our <span className='text-colors-ButtonOrange'>Terms of Service</span> and our <span className='text-colors-ButtonOrange'>Privacy Policy</span></p>
+                    <h1 className='font-bold font-source text-xl'>Connect Wallet</h1>
+                    <p className=' w-[260px] md:w-[400px] text-lg'>By connecting your wallet, you agree to our <span className='text-colors-ButtonOrange'>Terms of Service</span> and our <span className='text-colors-ButtonOrange'>Privacy Policy</span></p>
                 </div>
 
-                <div className='py-5 grid grid-cols-1 gap-4'>
+                <div className='py-6 grid grid-cols-1 gap-4'>
                     <ConnectButton logo={metamask_logo} description="Metamask" onFocusChange={handleFocusChange} />
                     <ConnectButton logo={coinbase_logo} description="Coinbase wallet" onFocusChange={handleFocusChange} />
                     <ConnectButton logo={trust_logo} description="Trust wallet" onFocusChange={handleFocusChange} />

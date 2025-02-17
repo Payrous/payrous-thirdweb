@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React from 'react'
 
 const Header = () => (
-  <div className='bg-colors-OffWhite shadow-lg w-full px-10 py-5 font-source text-colors-BlueGray flex justify-between items-center'>
+  <div className='bg-colors-OffWhite shadow-lg w-full px-10 py-5 font-geist text-colors-BlueGray flex justify-between items-center'>
     <div className='flex items-center gap-2'>
       <Image src={dashboard_icon} alt='dashboard_icon' className='w-6 h-6 text-colors-BlueGray ' />
       <h1 className='font-bold'>Dashboard</h1>

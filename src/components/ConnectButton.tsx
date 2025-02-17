@@ -34,7 +34,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({ logo, description, onFocu
                 
                 {isFocused && (
                     <button className='text-white bg-colors-ButtonOrange text-xs rounded-full hover:bg-orange-300 p-1'>
-                        connect
+                        Connect
                     </button>
                 )}
             </div>

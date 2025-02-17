@@ -8,7 +8,7 @@ import React from 'react'
 
 const Sidebar = () => {
   return (
-    <div className='h-screen bg-colors-BlueGray text-white px-4 py-10 w-52 rounded-r-[40px] flex flex-col justify-between font-source text-base'>
+    <div className='h-screen bg-colors-BlueGray text-white px-4 py-10 w-52 rounded-r-[40px] flex flex-col justify-between font-geist text-base'>
       <div className='flex flex-col gap-3'>
         <Image src={payrous_logo} alt="payrous-logo " className='w-20 h-20 items-center ml-10' />
 
