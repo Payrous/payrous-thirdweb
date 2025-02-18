@@ -17,6 +17,8 @@ import dashboard_icon from "@/assets/icons/dashboard_icon.svg"
 import payment_icon from "@/assets/icons/payment_icon.svg"
 import transact_icon from "@/assets/icons/transact_icon.svg"
 import search from "@/assets/icons/search.svg"
+import red from "@/assets/icons/red.svg"
+import green from "@/assets/icons/green.svg"
 
 export{
     payrous_logo,
@@ -38,5 +40,7 @@ export{
     payment_icon,
     transact_icon,
     search,
+    red,
+    green,
 
 }
