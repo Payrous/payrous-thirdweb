@@ -2,7 +2,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Image from "next/image"
-import { coinbase_logo, org_icon } from '@/assets/icons'
+import { Bitcoin, coinbase_logo, dai, ethereum1, matic, org_icon, solana, tether, usdc } from '@/assets/icons'
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
@@ -55,73 +55,64 @@ const Organization = () => {
                   <SelectContent className='max-h-[300px] overflow-hidden'>
                     <SelectItem value="user">
                       <div className="flex items-center gap-2">
-                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <Image src={ethereum1} alt='' className='w-5 h-5' />
                         <div>
-                          <div className="font-medium">User</div>
-                          <div className="text-xs text-muted-foreground">Standard access</div>
+                          <div className="font-medium">ETH</div>
+                          <div className="text-xs text-muted-foreground">Ethereum</div>
                         </div>
                       </div>
                     </SelectItem>
                     <SelectItem value="admin">
                       <div className="flex items-center gap-2">
-                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <Image src={usdc} alt='' className='w-5 h-5' />
                         <div>
-                          <div className="font-medium">Admin</div>
-                          <div className="text-xs text-muted-foreground">Full access</div>
+                          <div className="font-medium">USDC</div>
+                          <div className="text-xs text-muted-foreground">USDC</div>
                         </div>
                       </div>
                     </SelectItem>
                     <SelectItem value="moderator">
                       <div className="flex items-center gap-2">
-                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <Image src={Bitcoin} alt='' className='w-5 h-5' />
                         <div>
-                          <div className="font-medium">Moderator</div>
-                          <div className="text-xs text-muted-foreground">Limited control</div>
+                          <div className="font-medium"></div>WBTC
+                          <div className="text-xs text-muted-foreground">Wrapped...</div>
                         </div>
                       </div>
                     </SelectItem>
                     <SelectItem value="developer">
                       <div className="flex items-center gap-2">
-                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <Image src={tether} alt='' className='w-5 h-5' />
                         <div>
-                          <div className="font-medium">Developer</div>
-                          <div className="text-xs text-muted-foreground">Technical access</div>
+                          <div className="font-medium">USDT</div>
+                          <div className="text-xs text-muted-foreground">Tether USD</div>
                         </div>
                       </div>
                     </SelectItem>
                     <SelectItem value="manager">
                       <div className="flex items-center gap-2">
-                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <Image src={matic} alt='' className='w-5 h-5' />
                         <div>
-                          <div className="font-medium">Manager</div>
-                          <div className="text-xs text-muted-foreground">Team oversight</div>
+                          <div className="font-medium">Matic</div>
+                          <div className="text-xs text-muted-foreground">Polygon</div>
                         </div>
                       </div>
                     </SelectItem>
                     <SelectItem value="support">
                       <div className="flex items-center gap-2">
-                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <Image src={solana} alt='' className='w-5 h-5' />
                         <div>
-                          <div className="font-medium">Support</div>
-                          <div className="text-xs text-muted-foreground">Customer assistance</div>
+                          <div className="font-medium">Sol</div>
+                          <div className="text-xs text-muted-foreground">Solana</div>
                         </div>
                       </div>
                     </SelectItem>
                     <SelectItem value="analyst">
                       <div className="flex items-center gap-2">
-                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <Image src={dai} alt='' className='w-5 h-5' />
                         <div>
-                          <div className="font-medium">Analyst</div>
-                          <div className="text-xs text-muted-foreground">Data insights</div>
-                        </div>
-                      </div>
-                    </SelectItem>
-                    <SelectItem value="designer">
-                      <div className="flex items-center gap-2">
-                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
-                        <div>
-                          <div className="font-medium">Designer</div>
-                          <div className="text-xs text-muted-foreground">Creative work</div>
+                          <div className="font-medium">DAI</div>
+                          <div className="text-xs text-muted-foreground">Dai Stabl...</div>
                         </div>
                       </div>
                     </SelectItem>

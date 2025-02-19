@@ -19,6 +19,13 @@ import transact_icon from "@/assets/icons/transact_icon.svg"
 import search from "@/assets/icons/search.svg"
 import red from "@/assets/icons/red.svg"
 import green from "@/assets/icons/green.svg"
+import Bitcoin from "@/assets/icons/Bitcoin.svg"
+import ethereum1 from "@/assets/icons/ethereum1.svg"
+import dai from "@/assets/icons/dai.svg"
+import usdc from "@/assets/icons/usdc.svg"
+import tether from "@/assets/icons/tether.svg"
+import matic from "@/assets/icons/matic.svg"
+import solana from "@/assets/icons/solana.svg"
 
 
 export{
@@ -43,6 +50,12 @@ export{
     search,
     red,
     green,
-   
+    Bitcoin,
+    ethereum1,
+    dai,    
+    usdc,
+    tether, 
+    matic,
+    solana   
 
 }
