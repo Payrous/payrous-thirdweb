@@ -78,7 +78,9 @@ const config: Config = {
 						ButtonOrange: '#D98837',
 						DarkGray: '#A1A1A1',
 						OffWhite: '#F7F5EF',
-						Success: '#399320'
+						Success: '#399320',
+						WhiteSmoke: '#FEFCF5',
+						Warning: '#B2A401'					
 					}
 				},
 				keyframes: {

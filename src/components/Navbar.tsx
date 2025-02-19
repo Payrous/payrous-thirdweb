@@ -19,13 +19,15 @@ const Navbar = () => {
             <Link href="/how-it-works" className='hover:text-orange-400 hover:underline-offset-2 decoration-2'><li>How it works</li></Link>
             <Link href="/faq" className='hover:text-orange-400 hover:underline-offset-2 decoration-2'><li>FAQs</li></Link>
           </ul>
-
+          
+          <Link href="/connect-wallet">
           <Button
             type="submit"
             className='text-white bg-[#D98837] hover:bg-orange-300 shadow-slate-200 px-8 py-5 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl font-geist'
           >
             Connect Wallet
           </Button>
+          </Link>
         </nav>
       </div>
     </div>

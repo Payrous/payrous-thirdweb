@@ -14,9 +14,18 @@ const sourceSansPro = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "PAYROUS",
-  description: "Starter template for using thirdweb SDK with Next.js App router",
+  title: "Payrous",
+  description: "Payrous is a blockchain-powered platform designed to streamline payroll and bulk payment processes by enabling organizations to efficiently handle payments to multiple recipients.",
+  icons: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '64x64',
+      url: '/icon.svg',
+    },
+  ]
 };
+
 
 export default function RootLayout({
   children,
