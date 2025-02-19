@@ -1,4 +1,6 @@
+'use client'
 import React from 'react'
+import { useState } from 'react'
 import Image from "next/image"
 import { coinbase_logo, org_icon } from '@/assets/icons'
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
@@ -10,6 +12,12 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { HiOutlinePlusSm } from "react-icons/hi";
 
 const Organization = () => {
+  const [showCongrats, setShowCongrats] = useState(false)
+
+  const handleSaveChanges = () => {
+    setShowCongrats(true)
+  }
+
   return (
     <div className='text-colors-BlueGray font-geist text-lg'>
       <div className=' flex flex-col justify-center items-center text-center w-full h-[80vh] gap-3'>
@@ -33,89 +41,89 @@ const Organization = () => {
             <div className="grid gap-4 py-4 text-colors-BlueGray">
               <div className="grid gap-2">
                 <Label htmlFor="org-name">Organization Name</Label>
-                <Input id="org-name" placeholder="Enter organization name" required/>
+                <Input id="org-name" placeholder="Enter organization name" required />
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="role">Token type</Label>
                 <Select>
-              <SelectTrigger id="role">
-                <SelectValue placeholder="Select a role" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="user">
-                  <div className="flex items-center gap-2">
-                    <Image src={coinbase_logo} alt='' className='w-5 h-5' />
-                    <div>
-                      <div className="font-medium">User</div>
-                      <div className="text-xs text-muted-foreground">Standard access</div>
-                    </div>
-                  </div>
-                </SelectItem>
-                <SelectItem value="admin">
-                  <div className="flex items-center gap-2">
-                  <Image src={coinbase_logo} alt='' className='w-5 h-5' />
-                    <div>
-                      <div className="font-medium">Admin</div>
-                      <div className="text-xs text-muted-foreground">Full access</div>
-                    </div>
-                  </div>
-                </SelectItem>
-                <SelectItem value="moderator">
-                  <div className="flex items-center gap-2">
-                  <Image src={coinbase_logo} alt='' className='w-5 h-5' />
-                    <div>
-                      <div className="font-medium">Moderator</div>
-                      <div className="text-xs text-muted-foreground">Limited control</div>
-                    </div>
-                  </div>
-                </SelectItem>
-                <SelectItem value="developer">
-                  <div className="flex items-center gap-2">
-                  <Image src={coinbase_logo} alt='' className='w-5 h-5' />
-                    <div>
-                      <div className="font-medium">Developer</div>
-                      <div className="text-xs text-muted-foreground">Technical access</div>
-                    </div>
-                  </div>
-                </SelectItem>
-                <SelectItem value="manager">
-                  <div className="flex items-center gap-2">
-                  <Image src={coinbase_logo} alt='' className='w-5 h-5' />
-                    <div>
-                      <div className="font-medium">Manager</div>
-                      <div className="text-xs text-muted-foreground">Team oversight</div>
-                    </div>
-                  </div>
-                </SelectItem>
-                <SelectItem value="support">
-                  <div className="flex items-center gap-2">
-                  <Image src={coinbase_logo} alt='' className='w-5 h-5' />
-                    <div>
-                      <div className="font-medium">Support</div>
-                      <div className="text-xs text-muted-foreground">Customer assistance</div>
-                    </div>
-                  </div>
-                </SelectItem>
-                <SelectItem value="analyst">
-                  <div className="flex items-center gap-2">
-                  <Image src={coinbase_logo} alt='' className='w-5 h-5' />
-                    <div>
-                      <div className="font-medium">Analyst</div>
-                      <div className="text-xs text-muted-foreground">Data insights</div>
-                    </div>
-                  </div>
-                </SelectItem>
-                <SelectItem value="designer">
-                  <div className="flex items-center gap-2">
-                    <Image src={coinbase_logo} alt='' className='w-5 h-5' />
-                    <div>
-                      <div className="font-medium">Designer</div>
-                      <div className="text-xs text-muted-foreground">Creative work</div>
-                    </div>
-                  </div>
-                </SelectItem>
-              </SelectContent>
-            </Select>
+                  <SelectTrigger id="role">
+                    <SelectValue placeholder="Select a role" />
+                  </SelectTrigger>
+                  <SelectContent className='max-h-[300px] overflow-hidden'>
+                    <SelectItem value="user">
+                      <div className="flex items-center gap-2">
+                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <div>
+                          <div className="font-medium">User</div>
+                          <div className="text-xs text-muted-foreground">Standard access</div>
+                        </div>
+                      </div>
+                    </SelectItem>
+                    <SelectItem value="admin">
+                      <div className="flex items-center gap-2">
+                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <div>
+                          <div className="font-medium">Admin</div>
+                          <div className="text-xs text-muted-foreground">Full access</div>
+                        </div>
+                      </div>
+                    </SelectItem>
+                    <SelectItem value="moderator">
+                      <div className="flex items-center gap-2">
+                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <div>
+                          <div className="font-medium">Moderator</div>
+                          <div className="text-xs text-muted-foreground">Limited control</div>
+                        </div>
+                      </div>
+                    </SelectItem>
+                    <SelectItem value="developer">
+                      <div className="flex items-center gap-2">
+                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <div>
+                          <div className="font-medium">Developer</div>
+                          <div className="text-xs text-muted-foreground">Technical access</div>
+                        </div>
+                      </div>
+                    </SelectItem>
+                    <SelectItem value="manager">
+                      <div className="flex items-center gap-2">
+                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <div>
+                          <div className="font-medium">Manager</div>
+                          <div className="text-xs text-muted-foreground">Team oversight</div>
+                        </div>
+                      </div>
+                    </SelectItem>
+                    <SelectItem value="support">
+                      <div className="flex items-center gap-2">
+                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <div>
+                          <div className="font-medium">Support</div>
+                          <div className="text-xs text-muted-foreground">Customer assistance</div>
+                        </div>
+                      </div>
+                    </SelectItem>
+                    <SelectItem value="analyst">
+                      <div className="flex items-center gap-2">
+                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <div>
+                          <div className="font-medium">Analyst</div>
+                          <div className="text-xs text-muted-foreground">Data insights</div>
+                        </div>
+                      </div>
+                    </SelectItem>
+                    <SelectItem value="designer">
+                      <div className="flex items-center gap-2">
+                        <Image src={coinbase_logo} alt='' className='w-5 h-5' />
+                        <div>
+                          <div className="font-medium">Designer</div>
+                          <div className="text-xs text-muted-foreground">Creative work</div>
+                        </div>
+                      </div>
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               <div className="flex items-center space-x-2">
                 <Checkbox id="terms" />
@@ -124,20 +132,33 @@ const Organization = () => {
                     htmlFor="terms"
                     className="text-xs font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   >
-                   Token not available click here to import tokens
+                    Token not available click here to import tokens
                   </label>
                   <p className="text-[10px] text-colors-Warning italic">Note only ERC20 tokens and native cryprocurrency allowed</p>
                 </div>
               </div>
             </div>
             <DialogFooter>
-              <Button type="submit" className="w-full bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-7 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl">
+              <Button type="submit" className="w-full bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-7 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl " onClick={handleSaveChanges}>
                 Save
               </Button>
             </DialogFooter>
             <DialogClose className="absolute right-4 top-4 rounded-full border stroke-colors-BlueGray ">
               <span className="sr-only stroke-colors-BlueGray">Close</span>
             </DialogClose>
+          </DialogContent>
+        </Dialog>
+
+        {/* //for congrats */}
+        <Dialog open={showCongrats} onOpenChange={setShowCongrats}>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Congratulations!</DialogTitle>
+              <DialogDescription>Your profile has been successfully updated.</DialogDescription>
+            </DialogHeader>
+            <DialogFooter>
+              <Button onClick={() => setShowCongrats(false)}>OK</Button>
+            </DialogFooter>
           </DialogContent>
         </Dialog>
 
