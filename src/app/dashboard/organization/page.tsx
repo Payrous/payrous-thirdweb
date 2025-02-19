@@ -10,12 +10,15 @@ import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Checkbox } from '@/components/ui/checkbox'
 import { HiOutlinePlusSm } from "react-icons/hi";
+import { success } from '@/assets/images'
 
 const Organization = () => {
   const [showCongrats, setShowCongrats] = useState(false)
+  const [showCreateProfile, setShowCreateProfile] = useState(false)
 
   const handleSaveChanges = () => {
     setShowCongrats(true)
+    setShowCreateProfile(false)
   }
 
   return (
@@ -24,7 +27,7 @@ const Organization = () => {
         <Image src={org_icon} alt="oraganization icon" className='text-colors-ButtonOrange w-5 h-5' />
         <h1 className='font-source font-bold'>No Organization added</h1>
         <p className='w-[450px]'>You do not have any Organization. Click on the button below to start creating one.</p>
-        <Dialog>
+        <Dialog open={showCreateProfile} onOpenChange={setShowCreateProfile}>
           <DialogTrigger asChild>
             <Button variant="outline" className="border border-colors-ButtonOrange text-colors-ButtonOrange hover:text-colors-ButtonOrange hover:shadow-sm flex items-center gap-2 hover:bg-colors-OffWhite bg-colors-WhiteSmoke py-4 font-semibold font-geist">
               Add Organization
@@ -139,7 +142,7 @@ const Organization = () => {
               </div>
             </div>
             <DialogFooter>
-              <Button type="submit" className="w-full bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-7 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl " onClick={handleSaveChanges}>
+              <Button type="submit" className="w-full bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-6 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl " onClick={handleSaveChanges}>
                 Save
               </Button>
             </DialogFooter>
@@ -151,13 +154,16 @@ const Organization = () => {
 
         {/* //for congrats */}
         <Dialog open={showCongrats} onOpenChange={setShowCongrats}>
-          <DialogContent className="sm:max-w-[425px]">
-            <DialogHeader>
+          <DialogContent className="sm:max-w-[425px] text-center py-16 flex flex-col justify-center gap-8">
+            <DialogHeader className='text-colors-BlueGray '>
+              <div className='flex flex-col items-center gap-2'>
+              <Image src={success} alt='' />
               <DialogTitle>Congratulations!</DialogTitle>
-              <DialogDescription>Your profile has been successfully updated.</DialogDescription>
+              </div>
+              <DialogDescription className='text-colors-BlueGray text-center py-4'>Your organization is created successfully</DialogDescription>
             </DialogHeader>
-            <DialogFooter>
-              <Button onClick={() => setShowCongrats(false)}>OK</Button>
+            <DialogFooter >
+              <Button onClick={() => setShowCongrats(false)} className='w-full bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-6 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl'>Done</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>

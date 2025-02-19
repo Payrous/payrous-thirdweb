@@ -14,6 +14,7 @@ import sponsors from "@/assets/images/sponsors.svg"
 import test1 from "@/assets/images/test1.png"
 import test2 from "@/assets/images/test2.png"
 import avatar from "@/assets/images/avatar.svg"
+import success from "@/assets/images/success.svg"
 
 export{
     frame1,
@@ -32,4 +33,5 @@ export{
     test1,
     test2,
     avatar,
+    success,
 }

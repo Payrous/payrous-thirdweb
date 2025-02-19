@@ -19,7 +19,7 @@ import transact_icon from "@/assets/icons/transact_icon.svg"
 import search from "@/assets/icons/search.svg"
 import red from "@/assets/icons/red.svg"
 import green from "@/assets/icons/green.svg"
-import success from "@/assets/icons/success.svg"
+
 
 export{
     payrous_logo,
@@ -43,6 +43,6 @@ export{
     search,
     red,
     green,
-    success
+   
 
 }
