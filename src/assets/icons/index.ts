@@ -12,7 +12,7 @@ import coinbase_logo from "@/assets/icons/coinbase_logo.svg"
 import metamask_logo from "@/assets/icons/metamask_logo.svg"
 import trust_logo from "@/assets/icons/trust_logo.svg"
 import phantom_logo from "@/assets/icons/phantom_logo.svg"
-import org_icon from "@/assets/icons/org_icon.svg"
+import org from "@/assets/icons/org.svg"
 import dashboard_icon from "@/assets/icons/dashboard_icon.svg"
 import payment_icon from "@/assets/icons/payment_icon.svg"
 import transact_icon from "@/assets/icons/transact_icon.svg"
@@ -43,7 +43,7 @@ export{
     metamask_logo,
     trust_logo,
     phantom_logo,
-    org_icon,
+    org,
     dashboard_icon,
     payment_icon,
     transact_icon,

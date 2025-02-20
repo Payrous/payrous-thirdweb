@@ -2,7 +2,7 @@ import Dashboard from '@/app/dashboard/dashboard/page'
 import Organization from '@/app/dashboard/organization/page'
 import Payment from '@/app/dashboard/payment/page'
 import Image from 'next/image'
-import { dashboard_icon, org_icon, payment_icon, payrous_logo, transact_icon } from '@/assets/icons'
+import { dashboard_icon, org, payment_icon, payrous_logo, transact_icon } from '@/assets/icons'
 import Link from 'next/link'
 import React from 'react'
 
@@ -17,7 +17,7 @@ const Sidebar = () => {
             <div className='flex items-center gap-2'><Image src={dashboard_icon} alt='dashboard_icon' className='w-5 h-5' /> <h1>Dashboard</h1></div>
           </Link>
           <Link href="/dashboard/organization">
-            <div className='flex items-center gap-2'><Image src={org_icon} alt='organization_icon' className='w-5 h-5'/> <h1>Organization</h1></div>
+            <div className='flex items-center gap-2'><Image src={org} alt='organization_icon' className='w-5 h-5'/> <h1>Organization</h1></div>
           </Link>
           <Link href="/dashboard/payment">
             <div className='flex items-center gap-2'><Image src={payment_icon} alt='payment_icon' className='w-5 h-5'/> <h1>Payment</h1></div>
