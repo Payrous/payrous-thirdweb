@@ -88,7 +88,7 @@ const AddRecipient = () => {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button disabled={!isAccountFormValid} className='w-full pt-3 bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-6 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl'>
+                <Button disabled={!isAccountFormValid} className='w-full pt-3 text-white bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-6 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl'>
                   Save 
                 </Button>
               </CardFooter>
@@ -146,7 +146,7 @@ const AddRecipient = () => {
                 )}
               </CardContent>
               <CardFooter>
-                <Button disabled={!isPasswordFormValid} className='w-full bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-6 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl'>
+                <Button disabled={!isPasswordFormValid} className='w-full text-white bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-6 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl'>
                   Save
                 </Button>
               </CardFooter>

@@ -5,6 +5,7 @@ import { org } from '@/assets/icons'
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Link from 'next/link';
 import AddRecipient from '@/components/AddRecipient';
+import { recipient } from '@/data/recipient';
 
 
 const Organization = () => {
@@ -19,16 +20,19 @@ const Organization = () => {
         </div>
         <div> <AddOrg /></div>
       </div>
-      <div className='flex flex-col gap-1 bg-colors-WhiteSmoke rounded-xl p-4 drop-shadow-md'>
-        <p className='text-base font-bold'>C</p>
-        <Link href='/dashboard/organization/added-organization'>
-          <div className='flex justify-between items-center hover:ring-1 hover:ring-colors-ButtonOrange p-1 rounded-md cursor-pointer'>
-            <p className='text-sm'>Confab Company<span className='text-[10px]'>  (500 recipients)</span></p>
-            <MdKeyboardArrowRight className='w-6 h-6 text-colors-BlueGray' />
+      {
+        recipient.map((item) => (
+          <div key={item.id} className='flex flex-col gap-1 bg-colors-WhiteSmoke rounded-xl p-4 drop-shadow-md'>
+            <p className='text-base font-bold'>{item.initial}</p>
+            <Link href='/dashboard/organization/added-organization'>
+              <div className='flex justify-between items-center hover:ring-1 hover:ring-colors-ButtonOrange p-1 rounded-md cursor-pointer'>
+                <p className='text-sm'>{item.name}<span className='text-[10px]'>  ({item.recipient} recipients)</span></p>
+                <MdKeyboardArrowRight className='w-6 h-6 text-colors-BlueGray' />
+              </div>
+            </Link>
           </div>
-        </Link>
-      </div>
-
+        ))
+      }
       <AddRecipient />
     </div>
 

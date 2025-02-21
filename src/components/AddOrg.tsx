@@ -82,7 +82,7 @@ const AddOrg = () => {
                         </div>
                     </div>
                     <DialogFooter>
-                        <Button type="submit" className="w-full bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-6 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl " onClick={handleSaveChanges}>
+                        <Button type="submit" className="w-full text-white bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-6 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl " onClick={handleSaveChanges}>
                             Save
                         </Button>
                     </DialogFooter>
@@ -103,7 +103,7 @@ const AddOrg = () => {
                         <DialogDescription className='text-colors-BlueGray text-center py-4'>Your organization is created successfully</DialogDescription>
                     </DialogHeader>
                     <DialogFooter >
-                        <Button onClick={() => setShowCongrats(false)} className='w-full bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-6 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl'>Done</Button>
+                        <Button onClick={() => setShowCongrats(false)} className='w-full text-white bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-6 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl'>Done</Button>
                     </DialogFooter>
                 </DialogContent>
             </Dialog>
