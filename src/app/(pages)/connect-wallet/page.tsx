@@ -4,6 +4,7 @@ import { useState } from 'react'
 import React from 'react'
 import ConnectButton from '@/components/ConnectButton'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 const ConnectWallet: React.FC = () => {
     const [isAnyFocused, setIsAnyFocused] = useState(false);
@@ -28,14 +29,25 @@ const ConnectWallet: React.FC = () => {
                     <ConnectButton logo={phantom_logo} description="Phantom" onFocusChange={handleFocusChange} />
                 </div>
 
-                <div className='py-5'>
-                    <Button
-                        type='submit'
-                        className={`text-white w-[320px] md:w-[400px] bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 p-5 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-lg`}
-                        disabled={!isAnyFocused} // Disable button if not focused
-                    >
-                        Continue
-                    </Button>
+                      <div className='py-5'>
+                    {isAnyFocused ? (
+                        <Link href='/dashboard/dashboard'>
+                            <Button
+                                type='submit'
+                                className={`text-white w-[320px] md:w-[400px] bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 p-5 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-lg`}
+                            >
+                                Continue
+                            </Button>
+                        </Link>
+                    ) : (
+                        <Button
+                            type='button'
+                            className={`text-white w-[320px] md:w-[400px]  bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 p-5 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-lg cursor-not-allowed`}
+                            disabled
+                        >
+                            Continue
+                        </Button>
+                    )}
                 </div>
             </div>
         </div>

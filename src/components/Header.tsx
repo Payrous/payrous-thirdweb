@@ -10,7 +10,7 @@ const Header = () => (
       <h1 className='font-bold'>Dashboard</h1>
     </div>
     <div className='flex items-center gap-5'>
-      <div className='relative'>
+      <div className='relative flex items-center gap-2'>
         <input type="text" placeholder='Search here' className='rounded-full px-10 py-3 border focus:border-colors-BlueGray w-96 relative' />
         <Image src={search} alt='search_icon' className='w-5 h-5 absolute top-3 ml-4' />
       </div>

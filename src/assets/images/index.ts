@@ -15,6 +15,8 @@ import test1 from "@/assets/images/test1.png"
 import test2 from "@/assets/images/test2.png"
 import avatar from "@/assets/images/avatar.svg"
 import success from "@/assets/images/success.svg"
+import eth from "@/assets/images/eth.png"
+import stark from "@/assets/images/stark.png"
 
 export{
     frame1,
@@ -34,4 +36,6 @@ export{
     test2,
     avatar,
     success,
+    eth,
+    stark
 }

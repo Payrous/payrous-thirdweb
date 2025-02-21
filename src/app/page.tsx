@@ -6,7 +6,7 @@ import MobileNavbar from '@/components/MobileNavbar'
 import { Button } from '@/components/ui/button'
 import { GoArrowRight } from 'react-icons/go'
 import { demo_icon, icon1, icon2, icon3, icon4 } from '@/assets/icons'
-import { elipse2, elipse3, faqbg, frame1, frame2, frame3, frame8, frame8b, sponsors } from '@/assets/images'
+import { elipse2, elipse3, eth, faqbg, frame1, frame2, frame3, frame8, frame8b, sponsors, stark } from '@/assets/images'
 import PropCard from '@/components/PropCard'
 import HowItWorks from '@/components/HowItWorks'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
@@ -84,10 +84,14 @@ const Payrous = () => {
         </div>
 
         {/* social proof */}
-        <div className=''>
-          <div className='bg-white py-3 flex items-center justify-center w-full'>
-            <Image src={sponsors} alt='sponsors' />
+
+        <div className='bg-white py-4 md:py-6 flex flex-col items-center justify-center w-full gap-4 md:gap-6'>
+          <h1 className='text-colors-DarkGray font-bold text-xl md:text-3xl'>Trusted by</h1>
+          <div className='flex items-center gap-3 lg:gap-10 pb-3 md:pb-4'>
+            <Image src={eth} alt='sponsors' />
+            <Image src={stark} alt='sponsors' />
           </div>
+
 
 
           {/* offerpage */}
