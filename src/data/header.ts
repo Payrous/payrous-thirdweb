@@ -1,9 +1,14 @@
-import { dashboard_icon, org, payment_icon, transact_icon } from "@/assets/icons";
+import { TbSmartHome } from "react-icons/tb";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { CiWallet } from "react-icons/ci";
+import { CgFileDocument } from "react-icons/cg"
+
+import { IconType } from "react-icons";
 
 interface Header {
     id: number;
     title: string;
-    icon: string;
+    icon: IconType;
     alt: string;
 }
 
@@ -11,25 +16,25 @@ export const header: Header[] = [
     {
         id: 1,
         title: 'Dashboard',
-        icon: dashboard_icon,
+        icon: TbSmartHome,
         alt: 'dashboard_icon'
     },
     {
         id: 2,
         title: 'Organization',
-        icon: org,
+        icon: FaPeopleGroup,
         alt: 'organization_icon'
     },
     {
         id: 3,
         title: 'Payment',
-        icon: payment_icon,
+        icon: CiWallet,
         alt: 'payment_icon'
     },
     {
         id: 4,
         title: 'Transaction history',
-        icon: transact_icon,
+        icon: CgFileDocument,
         alt: 'transaction-history_icon '
     }
 ]

@@ -1,10 +1,72 @@
+// 'use client'
+// import { dashboard_icon, search } from '@/assets/icons';
+// import { avatar } from '@/assets/images';
+// import Image from 'next/image';
+// import React, { useState } from 'react';
+// import { usePathname } from 'next/navigation';
+// import { IoIosMenu } from "react-icons/io";
+
+// const headerTitles = {
+//   '/dashboard/dashboard': 'Dashboard',
+//   '/dashboard/organization': 'Organization',
+//   '/dashboard/payment': 'Payment',
+//   '/dashboard/transaction-history': 'Transaction History',
+// };
+
+// interface headerProps {
+//   toggleSidebar: () => void;
+// }
+
+// const Header = ({ toggleSidebar }) => {
+//   const pathname = usePathname();
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+//   const handleMenuToggle = () => {
+//     setIsMenuOpen(!isMenuOpen);
+//     toggleSidebar(); 
+//   };
+
+//   return (
+//     <div className='bg-colors-OffWhite shadow-lg w-full px-6 md:px-10 py-5 font-geist text-colors-BlueGray flex justify-between items-center'>
+
+//       <button className='lg:hidden' onClick={handleMenuToggle}>
+//         <IoIosMenu className='text-colors-BlueGray h-6 w-6' />
+//       </button>
+//       <div className='flex items-center gap-2'>
+//         <Image src={dashboard_icon} alt='dashboard_icon' className='w-6 h-6 text-colors-BlueGray' />
+//         <h1 className='font-bold'>{headerTitles[pathname] || 'Default Title'}</h1>
+//       </div>
+
+
+//       <div className='hidden lg:flex items-center gap-5'>
+//         <div className='relative flex items-center gap-2'>
+//           <input type="text" placeholder='Search here' className='rounded-full px-10 py-3 border focus:border-colors-BlueGray w-96 relative' />
+//           <Image src={search} alt='search_icon' className='w-4 h-4 absolute top-4 ml-4' />
+//         </div>
+
+//         <div className='flex items-center gap-2'>
+//           <Image src={avatar} alt='avatar' className='w-10 h-10' />
+//           <p className='text-colors-Success text-sm'>0x73f7...dd58</p>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Header;
+
+
 'use client'
-import { dashboard_icon, search } from '@/assets/icons';
+import { search } from '@/assets/icons';
 import { avatar } from '@/assets/images';
-import Image from 'next/image';
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { IoIosMenu } from "react-icons/io";
+import { TbSmartHome } from "react-icons/tb";
+import { FaPeopleGroup } from "react-icons/fa6"; 
+import { CiWallet } from "react-icons/ci"; 
+import { CgFileDocument } from "react-icons/cg"; 
 
 const headerTitles = {
   '/dashboard/dashboard': 'Dashboard',
@@ -13,11 +75,18 @@ const headerTitles = {
   '/dashboard/transaction-history': 'Transaction History',
 };
 
-interface headerProps {
+const headerIcons = {
+  '/dashboard/dashboard': TbSmartHome,
+  '/dashboard/organization': FaPeopleGroup,
+  '/dashboard/payment': CiWallet,
+  '/dashboard/transaction-history': CgFileDocument,
+};
+
+interface HeaderProps {
   toggleSidebar: () => void;
 }
 
-const Header = ({ toggleSidebar }) => {
+const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -26,17 +95,18 @@ const Header = ({ toggleSidebar }) => {
     toggleSidebar(); 
   };
 
+  const IconComponent = headerIcons[pathname] || TbSmartHome;
+
   return (
-    <div className='bg-colors-OffWhite shadow-lg w-full px-5 md:px-10 py-5 font-geist text-colors-BlueGray flex justify-between items-center'>
+    <div className='bg-colors-OffWhite shadow-lg w-full px-6 md:px-10 py-5 font-geist text-colors-BlueGray flex justify-between items-center'>
 
       <button className='lg:hidden' onClick={handleMenuToggle}>
         <IoIosMenu className='text-colors-BlueGray h-6 w-6' />
       </button>
       <div className='flex items-center gap-2'>
-        <Image src={dashboard_icon} alt='dashboard_icon' className='w-6 h-6 text-colors-BlueGray' />
+        <IconComponent className='w-6 h-6 text-colors-BlueGray' />
         <h1 className='font-bold'>{headerTitles[pathname] || 'Default Title'}</h1>
       </div>
-
 
       <div className='hidden lg:flex items-center gap-5'>
         <div className='relative flex items-center gap-2'>
