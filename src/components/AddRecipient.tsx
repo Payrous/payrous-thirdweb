@@ -98,14 +98,14 @@ const AddRecipient = () => {
             <Card>
               <CardContent className="space-y-4 pt-3">
                 {showAlert && (
-                  <Alert className="bg-green-100 text-green-800 flex items-start">
-                    <CheckCircle className="h-4 w-4 mt-1 mr-2 text-green-600" />
+                  <Alert className="bg-green-100 text-green-800 flex items-center">
+                    <CheckCircle className="h-4 w-4 mt-1 mr-2 text-green-600 text-center " />
                     <div className="flex-1">
                       <AlertTitle>Success</AlertTitle>
                       <AlertDescription>Your password has been updated successfully.</AlertDescription>
                     </div>
                     <Button variant="ghost" className="h-6 w-6 p-0" onClick={() => setShowAlert(false)}>
-                      <X className="h-6 w-6 right-4 top-2 text-colors-BlueGray" />
+                      <X className="h-6 w-6 right- top-2 text-colors-BlueGray" />
                     </Button>
                   </Alert>
                 )}

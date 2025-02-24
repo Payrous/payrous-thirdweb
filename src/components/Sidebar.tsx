@@ -11,8 +11,9 @@ import { IoCloseSharp } from "react-icons/io5";
 import { VscChromeMinimize } from "react-icons/vsc";
 import { TbSmartHome } from "react-icons/tb";
 import { FaPeopleGroup } from "react-icons/fa6";
-import { CiWallet } from "react-icons/ci";
+import { IoWalletOutline } from "react-icons/io5";
 import { CgFileDocument } from "react-icons/cg";
+
 
 interface SidebarProps {
   isMobile: boolean;
@@ -60,7 +61,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isMobile, toggleSidebar, setSidebarVi
           <Link href="/dashboard/payment">
             <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/payment' ? 'text-colors-ButtonOrange' : ''}`}>
               {pathname === '/dashboard/payment' && <VscChromeMinimize className='w-0.5 h-5 bg-colors-ButtonOrange mr-2 ' />}
-              <CiWallet className='w-4 h-4' />
+              <IoWalletOutline className='w-4 h-4' />
               <h1>Payment</h1>
             </div>
           </Link>

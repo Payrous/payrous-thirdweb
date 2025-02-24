@@ -65,8 +65,9 @@ import { usePathname } from 'next/navigation';
 import { IoIosMenu } from "react-icons/io";
 import { TbSmartHome } from "react-icons/tb";
 import { FaPeopleGroup } from "react-icons/fa6"; 
-import { CiWallet } from "react-icons/ci"; 
+import { IoWalletOutline } from "react-icons/io5";
 import { CgFileDocument } from "react-icons/cg"; 
+
 
 const headerTitles = {
   '/dashboard/dashboard': 'Dashboard',
@@ -78,7 +79,7 @@ const headerTitles = {
 const headerIcons = {
   '/dashboard/dashboard': TbSmartHome,
   '/dashboard/organization': FaPeopleGroup,
-  '/dashboard/payment': CiWallet,
+  '/dashboard/payment': IoWalletOutline,
   '/dashboard/transaction-history': CgFileDocument,
 };
 

@@ -1,7 +1,7 @@
 import { TbSmartHome } from "react-icons/tb";
 import { FaPeopleGroup } from "react-icons/fa6";
-import { CiWallet } from "react-icons/ci";
 import { CgFileDocument } from "react-icons/cg"
+import { FaWallet } from "react-icons/fa";
 
 import { IconType } from "react-icons";
 
@@ -28,7 +28,7 @@ export const header: Header[] = [
     {
         id: 3,
         title: 'Payment',
-        icon: CiWallet,
+        icon: FaWallet,
         alt: 'payment_icon'
     },
     {

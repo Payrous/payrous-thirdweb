@@ -10,7 +10,7 @@ import { FaPeopleGroup } from "react-icons/fa6";
 const Organization = () => {
   const x = 0
 
-  return x > 2 ? (
+  return x < 2 ? (
     <div className='text-colors-BlueGray  font-geist flex flex-col gap-4 justify-center w-full p-5 md:px-10 md:py-4'>
       <div className='flex justify-between items-center'>
         <div className='flex gap-2 font-source items-center font-bold text-lg'>
