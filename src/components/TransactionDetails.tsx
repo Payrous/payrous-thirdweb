@@ -112,13 +112,13 @@ Details: ${transaction.details}`
       <div className="overflow-x-auto">
         <Table className="min-w-full">
           <TableHeader>
-            <TableRow>
-              <TableHead className="min-w-[120px]">Time stamp</TableHead>
-              <TableHead className="min-w-[180px]">Recipient address</TableHead>
-              <TableHead className="min-w-[100px]">Amount</TableHead>
-              <TableHead className="min-w-[180px]">Transaction ID</TableHead>
-              <TableHead className="min-w-[100px]">Status</TableHead>
-              <TableHead className="min-w-[80px]"></TableHead>
+            <TableRow className="">
+              <TableHead className="min-w-[120px] text-colors-BlueGray font-bold font-source text-sm">Time stamp</TableHead>
+              <TableHead className="min-w-[180px] text-colors-BlueGray font-bold font-source text-sm">Recipient address</TableHead>
+              <TableHead className="min-w-[100px] text-colors-BlueGray font-bold font-source text-sm">Amount</TableHead>
+              <TableHead className="min-w-[180px] text-colors-BlueGray font-bold font-source text-sm">Transaction ID</TableHead>
+              <TableHead className="min-w-[100px] text-colors-BlueGray font-bold font-source text-sm">Status</TableHead>
+              <TableHead className="min-w-[80px] text-colors-BlueGray font-bold font-source text-sm"></TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
