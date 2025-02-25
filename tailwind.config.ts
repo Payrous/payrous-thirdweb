@@ -81,7 +81,8 @@ const config: Config = {
 						Success: '#399320',
 						WhiteSmoke: '#FEFCF5',
 						Warning: '#B2A401',
-						Primay100: '#FFD9B2'					
+						Primay100: '#FFD9B2',	
+						Neutral: '#F7F7F7'				
 					}
 				},
 				keyframes: {

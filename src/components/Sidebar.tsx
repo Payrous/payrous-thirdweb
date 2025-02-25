@@ -31,7 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isMobile, toggleSidebar, setSidebarVi
   return (
     <div className={`h-screen bg-colors-BlueGray text-white px-4 py-10 w-full lg:w-52 lg:rounded-r-[40px] flex flex-col justify-between font-geist text-base ${isMobile ? 'fixed top-0 left-0 z-50' : ''}`}>
       {/* Close Button for mobile */}
-      <div className='flex lg:hidden justify-between items-center relative gap-40'>
+      <div className='flex md:flex lg:hidden justify-between items-center relative gap-40'>
         {isMobile && (
           <button onClick={handleClose} className="absolute top-6 left-2 text-white z-50">
             <IoCloseSharp className="h-6 w-6" />

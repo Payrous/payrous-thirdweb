@@ -8,10 +8,10 @@ import { FaPeopleGroup } from "react-icons/fa6";
 
 
 const Organization = () => {
-  const x = 0
+  const x = 2
 
   return x < 2 ? (
-    <div className='text-colors-BlueGray  font-geist flex flex-col gap-4 justify-center w-full p-5 md:px-10 md:py-4'>
+    <div className='text-colors-BlueGray font-geist flex flex-col gap-4 justify-center w-full p-5 md:px-10 md:py-4'>
       <div className='flex justify-between items-center'>
         <div className='flex gap-2 font-source items-center font-bold text-lg'>
           <h1>Organization</h1>
@@ -40,7 +40,7 @@ const Organization = () => {
       <div className=' flex flex-col justify-center items-center text-center w-full h-[80vh] gap-3'>
         <FaPeopleGroup className='w-6 h-6 text-colors-ButtonOrange' />
         <h1 className='font-source font-bold'>No Organization added</h1>
-        <p className='w-[450px]'>You do not have any Organization. Click on the button below to start creating one.</p>
+        <p className='w-[350px] lg:w-[450px]'>You do not have any Organization. Click on the button below to start creating one.</p>
         <AddOrg />
       </div>
     </div>
