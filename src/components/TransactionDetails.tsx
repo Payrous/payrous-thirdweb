@@ -65,6 +65,14 @@ const transactions = [
     status: "success",
     details: "Transaction completed successfully. Gas fee: 0.0025 ETH",
   },
+  {
+    timestamp: "23-06-02 14:45",
+    recipientAddress: "0x9876...3210",
+    amount: "1.2 ETH",
+    transactionId: "0xfedc...ba98",
+    status: "pending",
+    details: "Transaction is pending. Estimated completion time: 5 minutes",
+  },
 ]
 
 const statusColors = {
@@ -113,7 +121,7 @@ Details: ${transaction.details}`
         <Table className="min-w-full">
           <TableHeader>
             <TableRow className="">
-              <TableHead className="min-w-[120px] text-colors-BlueGray font-bold font-source text-sm">Time stamp</TableHead>
+              <TableHead className="min-w-[120px] text-colors-BlueGray font-bold font-source text-sm ml-5">Time stamp</TableHead>
               <TableHead className="min-w-[180px] text-colors-BlueGray font-bold font-source text-sm">Recipient address</TableHead>
               <TableHead className="min-w-[100px] text-colors-BlueGray font-bold font-source text-sm">Amount</TableHead>
               <TableHead className="min-w-[180px] text-colors-BlueGray font-bold font-source text-sm">Transaction ID</TableHead>
