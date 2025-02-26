@@ -1,5 +1,5 @@
 import { usdc, tether, matic, solana, dai, ethereum1 } from "@/assets/icons";
-import { Bitcoin } from "lucide-react";
+import { Bitcoin } from "@/assets/icons";
 import { StaticImageData } from "next/image";
 
 interface Coin {
