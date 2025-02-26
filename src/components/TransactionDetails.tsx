@@ -91,6 +91,7 @@ const statusColors = {
 
 const TransactionDetails = () => {
   const [currentPage, setCurrentPage] = useState(1)
+  const [selectedTransactions, setSelectedTransactions] = useState<string[]>([])
   const itemsPerPage = 6
   const totalPages = Math.ceil(transactions.length / itemsPerPage)
 
@@ -123,16 +124,48 @@ Details: ${transaction.details}`
     document.body.removeChild(a)
     URL.revokeObjectURL(url)
   }
+
+  const handleSelectAll = (checked: boolean) => {
+    if (checked) {
+      setSelectedTransactions(currentTransactions.map((t) => t.transactionId))
+    } else {
+      setSelectedTransactions([])
+    }
+  }
+
+  const handleSelectTransaction = (transactionId: string, checked: boolean) => {
+    if (checked) {
+      setSelectedTransactions([...selectedTransactions, transactionId])
+    } else {
+      setSelectedTransactions(selectedTransactions.filter((id) => id !== transactionId))
+    }
+  }
+
   return (
     <div className="space-y-4">
       <div className="overflow-x-auto">
         <Table className="min-w-full">
           <TableHeader>
             <TableRow className="">
-              <TableHead className="min-w-[120px] text-colors-BlueGray font-bold font-source text-sm ml-2">Time stamp</TableHead>
-              <TableHead className="min-w-[180px] text-colors-BlueGray font-bold font-source text-sm">Recipient address</TableHead>
+              <TableHead className="min-w-[120px] text-colors-BlueGray font-bold font-source text-sm ml-2">
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="select-all"
+                    checked={
+                      currentTransactions.length > 0 && selectedTransactions.length === currentTransactions.length
+                    }
+                    onCheckedChange={handleSelectAll}
+                  />
+                  <label htmlFor="select-all">Time stamp</label>
+                </div>
+              </TableHead>
+              <TableHead className="min-w-[180px] text-colors-BlueGray font-bold font-source text-sm">
+                Recipient address
+              </TableHead>
               <TableHead className="min-w-[100px] text-colors-BlueGray font-bold font-source text-sm">Amount</TableHead>
-              <TableHead className="min-w-[180px] text-colors-BlueGray font-bold font-source text-sm">Transaction ID</TableHead>
+              <TableHead className="min-w-[180px] text-colors-BlueGray font-bold font-source text-sm">
+                Transaction ID
+              </TableHead>
               <TableHead className="min-w-[100px] text-colors-BlueGray font-bold font-source text-sm">Status</TableHead>
               <TableHead className="min-w-[80px] text-colors-BlueGray font-bold font-source text-sm"></TableHead>
             </TableRow>
@@ -142,7 +175,13 @@ Details: ${transaction.details}`
               <TableRow key={transaction.transactionId}>
                 <TableCell>
                   <div className="flex items-center space-x-2">
-                    <Checkbox id={`checkbox-${transaction.transactionId}`} />
+                    <Checkbox
+                      id={`checkbox-${transaction.transactionId}`}
+                      checked={selectedTransactions.includes(transaction.transactionId)}
+                      onCheckedChange={(checked) =>
+                        handleSelectTransaction(transaction.transactionId, checked as boolean)
+                      }
+                    />
                     <label htmlFor={`checkbox-${transaction.transactionId}`}>{transaction.timestamp}</label>
                   </div>
                 </TableCell>
@@ -161,10 +200,10 @@ Details: ${transaction.details}`
                         </Button>
                       </TooltipTrigger>
                       <TooltipContent>
-                        <div className="flex flex-col space-y-2 p-2">
+                        <div className="flex flex-col">
                           <Dialog>
                             <DialogTrigger asChild>
-                              <Button variant="ghost" className="justify-start">
+                              <Button variant="ghost" className="justify-start text-colors-BlueGray font-geist">
                                 View details
                               </Button>
                             </DialogTrigger>
@@ -194,8 +233,13 @@ Details: ${transaction.details}`
                               </div>
                             </DialogContent>
                           </Dialog>
-                          <Button variant="ghost" className="justify-start" onClick={() => handleDownload(transaction)}>
-                            Download
+                          <hr className="w-full text-colors-DarkGray h-2" />
+                          <Button
+                            variant="ghost"
+                            className="justify-start text-colors-BlueGray font-geist"
+                            onClick={() => handleDownload(transaction)}
+                          >
+                            Download pdf
                           </Button>
                         </div>
                       </TooltipContent>
@@ -208,7 +252,7 @@ Details: ${transaction.details}`
         </Table>
       </div>
       <div className="">
-        <Pagination>
+        <Pagination className="cursor-pointer">
           <PaginationContent>
             <PaginationItem>
               <PaginationPrevious
@@ -237,4 +281,3 @@ Details: ${transaction.details}`
 }
 
 export default TransactionDetails
-
