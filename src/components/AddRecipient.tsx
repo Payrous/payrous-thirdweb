@@ -51,7 +51,7 @@ const AddRecipient = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className='border border-colors-ButtonOrange text-colors-ButtonOrange hover:text-colors-ButtonOrange hover:shadow-sm flex items-center gap-2 hover:bg-colors-OffWhite bg-colors-WhiteSmoke py-5 rounded-xl font-semibold font-geist w-40'>
+        <Button className='border border-colors-ButtonOrange text-colors-ButtonOrange hover:text-colors-ButtonOrange hover:shadow-sm flex items-center gap-2 hover:bg-colors-OffWhite bg-colors-WhiteSmoke py-5 rounded-xl font-semibold font-geist w-80 lg:w-40'>
           Add Recipient
           <span className="border border-colors-ButtonOrange rounded-md ">
             <HiOutlinePlusSm size={5} />

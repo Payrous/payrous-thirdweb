@@ -82,7 +82,9 @@ const config: Config = {
 						WhiteSmoke: '#FEFCF5',
 						Warning: '#B2A401',
 						Primay100: '#FFD9B2',	
-						Neutral: '#F7F7F7'				
+						Neutral: '#F7F7F7',	
+						OffGreen: '#E7F8EB',
+						RoundedGreen: '#0FBD3B'		
 					}
 				},
 				keyframes: {
