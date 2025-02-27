@@ -17,6 +17,7 @@ import avatar from "@/assets/images/avatar.svg"
 import success from "@/assets/images/success.svg"
 import eth from "@/assets/images/eth.png"
 import stark from "@/assets/images/stark.png"
+import deleteIcon from "@/assets/images/deleteIcon.svg"
 
 export{
     frame1,
@@ -37,5 +38,6 @@ export{
     avatar,
     success,
     eth,
-    stark
+    stark,
+    deleteIcon
 }

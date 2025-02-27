@@ -11,6 +11,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Progress } from "@/components/ui/progress"
 import { FileIcon, CheckCircle, X } from "lucide-react"
 import { HiOutlinePlusSm } from 'react-icons/hi'
+import { PiWarningFill } from "react-icons/pi";
 
 const AddRecipient = () => {
   const [name, setName] = useState("")
@@ -98,11 +99,11 @@ const AddRecipient = () => {
             <Card>
               <CardContent className="space-y-4 pt-3">
                 {showAlert && (
-                  <Alert className="bg-green-100 text-green-800 flex items-center">
-                    <CheckCircle className="h-4 w-4 mt-1 mr-2 text-green-600 text-center " />
+                  <Alert className="bg-colors-YellowWarnbg text-colors-BlueGray flex items-center justify-between text-center border-2 border-colors-YellowWarn shadow-md">
+                    <PiWarningFill className="h-4 w-4 mt-1 mr-2 text-colors-YellowWarn text-center " />
                     <div className="flex-1">
-                      <AlertTitle>Success</AlertTitle>
-                      <AlertDescription>Your password has been updated successfully.</AlertDescription>
+                      <AlertTitle className="text-colors-BlueGray font-normal font-geist text-sm">It is important to follow the same format as wrongly formatted files will not be processed </AlertTitle>
+                      <AlertDescription className='text-colors-BlueGray text-sm font-bold font-geist'>Maximum of 700 recipients</AlertDescription>
                     </div>
                     <Button variant="ghost" className="h-6 w-6 p-0" onClick={() => setShowAlert(false)}>
                       <X className="h-6 w-6 right- top-2 text-colors-BlueGray" />

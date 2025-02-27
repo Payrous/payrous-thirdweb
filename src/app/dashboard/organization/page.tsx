@@ -40,14 +40,14 @@ const Organization = () => {
     //       </div>
     //     ))
     //   }
-    //   <AddRecipient />  // to bel added to the add receipient page created. it is not meant to be on this page
+    //   <AddRecipient />  // to be added to the add receipient page created. it is not meant to be on this page
     // </div>
 
     // individual org => confab company receipients
     <div className='space-y-5'>
       {showAlert && (
         <div className='px-5 md:px-10  '>
-          <Alert className="bg-colors-OffGreen border-colors-RoundedGreen shadow-sm w-full mb-1 mt-4 p-5 md:px-6 md:py-5 border-2 flex justify-between items-center ">
+          <Alert className="bg-colors-OffGreen border-colors-RoundedGreen shadow-md w-full mb-1 mt-4 p-5 md:px-6 md:py-5 border-2 flex justify-between items-center ">
           <div className="flex items-center gap-3">
             <Check className="h-6 w-6 mr-2 text-white bg-colors-RoundedGreen p-1 rounded-full" />
             <AlertDescription className='text-colors-BlueGray font-medium text-base '>Success! Recipients added successfully.</AlertDescription>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Mulish, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { ThirdwebProvider } from "thirdweb/react";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Mulish({ 
   variable: "--font-geist-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({
         <ThirdwebProvider>
           {children}
         </ThirdwebProvider>
+        <Toaster/>
       </body>
     </html>
   );

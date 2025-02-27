@@ -47,7 +47,7 @@ const AddOrg = () => {
 
   const validateTokenAddress = (address: string) => {
     // Implementation for token address
-    // the return statement here is just an example of the things the tA must entail before button is clickable
+    // the return statement here is just an example of the things the ta must entail before button is clickable
     return address.startsWith("0x") && address.length === 42
   }
 

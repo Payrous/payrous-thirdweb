@@ -84,7 +84,9 @@ const config: Config = {
 						Primay100: '#FFD9B2',	
 						Neutral: '#F7F7F7',	
 						OffGreen: '#E7F8EB',
-						RoundedGreen: '#0FBD3B'		
+						RoundedGreen: '#0FBD3B',
+						YellowWarn: '#DFD407',
+						YellowWarnbg: '#FCFBE6'		
 					}
 				},
 				keyframes: {
