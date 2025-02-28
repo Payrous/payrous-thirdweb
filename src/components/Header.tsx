@@ -16,6 +16,9 @@ const headerTitles = {
   '/dashboard/organization': 'Organization',
   '/dashboard/payment': 'Payment',
   '/dashboard/transaction-history': 'Transaction History',
+  '/dashboard/payment/recurring': 'Payment',
+  '/dashboard/payment/one-time': 'Payment',
+  '/dashboard/payment/deposit-fund': 'Payment',
 };
 
 const headerIcons = {
@@ -23,6 +26,9 @@ const headerIcons = {
   '/dashboard/organization': FaPeopleGroup,
   '/dashboard/payment': IoWalletOutline,
   '/dashboard/transaction-history': CgFileDocument,
+  '/dashboard/payment/recurring': IoWalletOutline,
+  '/dashboard/payment/one-time': IoWalletOutline,
+  '/dashboard/payment/deposit-fund': IoWalletOutline,
 };
 
 interface HeaderProps {

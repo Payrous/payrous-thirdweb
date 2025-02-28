@@ -29,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isMobile, toggleSidebar, setSidebarVi
   };
 
   return (
-    <div className={`h-screen bg-colors-BlueGray text-white px-4 py-10 w-full lg:w-52 lg:rounded-r-[40px] flex flex-col justify-between font-geist text-base ${isMobile ? 'fixed top-0 left-0 z-50' : ''}`}>
+    <div className={`h-screen bg-colors-BlueGray text-white px-4 py-10 w-60 lg:w-52 lg:rounded-r-[40px] flex flex-col justify-between font-geist text-base ${isMobile ? 'fixed top-0 left-0 z-50' : ''}`}>
       {/* Close Button for mobile */}
       <div className='flex md:flex lg:hidden justify-between items-center relative gap-40'>
         {isMobile && (
@@ -65,6 +65,26 @@ const Sidebar: React.FC<SidebarProps> = ({ isMobile, toggleSidebar, setSidebarVi
               <h1>Payment</h1>
             </div>
           </Link>
+          {/* subpayment pages */}
+          <Link href="/dashboard/payment/recurring">
+            <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/payment/recurring' ? 'text-colors-ButtonOrange' : ''}`}>
+            {pathname === '/dashboard/payment/recurring'}
+              <h1>Recurring</h1>
+            </div>
+          </Link>
+          <Link href="/dashboard/payment/one-time">
+            <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/payment/one-time' ? 'text-colors-ButtonOrange' : ''}`}>
+            {pathname === '/dashboard/payment/one-time'}
+              <h1>One-Time</h1>
+            </div>
+          </Link>
+          <Link href="/dashboard/paymentdeposit-fund">
+            <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/payment/deposit-fund' ? 'text-colors-ButtonOrange' : ''}`}>
+            {pathname === '/dashboard/payment/deposit-fund'}
+              <h1>Deposit Fund</h1>
+            </div>
+          </Link>
+          {/* end of subpayment pages */}
           <Link href="/dashboard/transaction-history">
             <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/transaction-history' ? 'text-colors-ButtonOrange' : ''}`}>
               {pathname === '/dashboard/transaction-history' && <VscChromeMinimize className='w-0.5 h-5 bg-colors-ButtonOrange mr-2 ' />}
