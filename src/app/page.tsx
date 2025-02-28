@@ -50,7 +50,7 @@ const Payrous = () => {
                 Simplify Your Payroll with
                 <span className='text-colors-ButtonOrange italic font-geist'> Payrous</span>
               </h1>
-              <h1 className='text-sm font-extralight text-center md:text-left leading-6 text-white font-geist md:w-2/5 w-full py-6 md:py-0 px-0 lg:px-8'>
+              <h1 className='text-sm font-extralight text-center md:text-left leading-6 text-white font-geist md:max-w-[40%] w-full py-6 md:py-0 px-0 lg:px-8'>
                 Revolutionize your payroll experience with Payrous, a cutting-edge
                 blockchain-powered platform that simplifies bulk payment processes.
                 Effortlessly manage and automate payments to multiple recipients
@@ -77,7 +77,7 @@ const Payrous = () => {
 
           </div>
 
-          <div className='flex flex-col md:flex-row items-center gap-2 md:gap-0 py-8 md:py-3 lg:py-2 px-4 md:px-0'>
+          <div className='flex flex-col md:flex-row items-center gap-2 md:gap-0 py-8 md:py-3 lg:py-2 px-4 md:px-32'>
             <Image src={frame1} alt='dashboard-picture' className='w-full md:w-[460px] lg:w-[780px] overflow-hidden' />
             <Image src={frame2} alt='cube-frame' className='w-full md:w-[300px] lg:w-[500px] mb-0 lg:-mt-10 overflow-hidden' />
           </div>

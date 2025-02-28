@@ -13,7 +13,7 @@ const Footer = () => {
                     <p className='w-full md:max-w-[400px] :max-w-[350px]'>Payrous is a blockchain-powered platform designed to streamline payroll and bulk payment processes by enabling organizations to efficiently handle payments to multiple recipients.</p>
                 </div>
 
-                <div className='flex flex-col md:flex-row gap-10 md:gap-10 lg:gap-40'>
+                <div className='flex flex-col md:flex-row justify-between'>
                     <div className=''>
                         <h1 className='font-semibold pb-3'>Company</h1>
                         <ul className='flex flex-col gap-2'>

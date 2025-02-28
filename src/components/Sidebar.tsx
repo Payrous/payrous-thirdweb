@@ -37,11 +37,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isMobile, toggleSidebar, setSidebarVi
             <IoCloseSharp className="h-6 w-6" />
           </button>
         )}
-        <Image src={payrous_logo} alt="payrous-logo" className='w-20 h-20 items-center ml-20' />
+        <Link href='/'>
+          <Image src={payrous_logo} alt="payrous-logo" className='w-20 h-20 items-center ml-20' />
+        </Link>
       </div>
 
       <div className='flex flex-col gap-3'>
-        <Image src={payrous_logo} alt="payrous-logo" className='hidden lg:flex w-20 h-20 items-center ml-10' />
+        <Link href='/'>
+          <Image src={payrous_logo} alt="payrous-logo" className='hidden lg:flex w-20 h-20 items-center ml-10' />
+        </Link>
 
         <div className='flex flex-col gap-6 items-start text-sm'>
           <Link href="/dashboard/dashboard">
@@ -68,19 +72,19 @@ const Sidebar: React.FC<SidebarProps> = ({ isMobile, toggleSidebar, setSidebarVi
           {/* subpayment pages */}
           <Link href="/dashboard/payment/recurring">
             <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/payment/recurring' ? 'text-colors-ButtonOrange' : ''}`}>
-            {pathname === '/dashboard/payment/recurring'}
+              {pathname === '/dashboard/payment/recurring'}
               <h1>Recurring</h1>
             </div>
           </Link>
           <Link href="/dashboard/payment/one-time">
             <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/payment/one-time' ? 'text-colors-ButtonOrange' : ''}`}>
-            {pathname === '/dashboard/payment/one-time'}
+              {pathname === '/dashboard/payment/one-time'}
               <h1>One-Time</h1>
             </div>
           </Link>
-          <Link href="/dashboard/paymentdeposit-fund">
+          <Link href="/dashboard/payment/deposit-fund">
             <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/payment/deposit-fund' ? 'text-colors-ButtonOrange' : ''}`}>
-            {pathname === '/dashboard/payment/deposit-fund'}
+              {pathname === '/dashboard/payment/deposit-fund'}
               <h1>Deposit Fund</h1>
             </div>
           </Link>
