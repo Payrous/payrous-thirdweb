@@ -12,8 +12,9 @@ const Footer = () => {
                     <Image src={payrous_logo} alt="payrous logo" className='w-24 pb-3 items-center md:items-start' />
                     <p className='w-full md:max-w-[400px] :max-w-[350px]'>Payrous is a blockchain-powered platform designed to streamline payroll and bulk payment processes by enabling organizations to efficiently handle payments to multiple recipients.</p>
                 </div>
-
-                <div className='flex flex-col md:flex-row justify-between'>
+               
+               {/* link */}
+                <div className='flex flex-col md:flex-row justify-between  w-full md:w-auto gap-12'>
                     <div className=''>
                         <h1 className='font-semibold pb-3'>Company</h1>
                         <ul className='flex flex-col gap-2'>

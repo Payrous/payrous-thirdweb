@@ -17,6 +17,7 @@ import { CgClose } from 'react-icons/cg'
 const AddRecipient = () => {
   const [name, setName] = useState("")
   const [username, setUsername] = useState("")
+  const [token, setToken] = useState("")
   const [currentPassword, setCurrentPassword] = useState("")
   const [newPassword, setNewPassword] = useState("")
   const [file, setFile] = useState<File | null>(null)
@@ -85,8 +86,8 @@ const AddRecipient = () => {
                   <Input id="username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder='Enter name of recipient' />
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="username">Token</Label>
-                  <Input id="token" value={username} onChange={(e) => setUsername(e.target.value)} placeholder='Enter amount' />
+                  <Label htmlFor="token">Token</Label>
+                  <Input id="token" value={token} onChange={(e) => setToken(e.target.value)} placeholder='Enter amount' />
                 </div>
               </CardContent>
               <CardFooter>
