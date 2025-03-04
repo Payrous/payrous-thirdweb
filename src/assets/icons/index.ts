@@ -26,6 +26,8 @@ import usdc from "@/assets/icons/usdc.svg"
 import tether from "@/assets/icons/tether.svg"
 import matic from "@/assets/icons/matic.svg"
 import solana from "@/assets/icons/solana.svg"
+import calendar_Icon from "@/assets/icons/calendar_icon.svg"
+import gas_icon from "@/assets/icons/gas_icon.svg"
 
 
 export{
@@ -56,6 +58,8 @@ export{
     usdc,
     tether, 
     matic,
-    solana   
+    solana,
+    calendar_Icon,
+    gas_icon   
 
 }

@@ -21,12 +21,12 @@ import {
   Trash2,
   ChevronLeft,
   ChevronRight,
-  ChevronsLeft,
-  ChevronsRight,
 } from "lucide-react"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Calendar as CalendarComponent } from "@/components/ui/calendar"
 import { format } from "date-fns"
+import { calendar_Icon, gas_icon } from "@/assets/icons"
+import Image from "next/image"
 
 // Define interfaces for our data structures
 interface Recipient {
@@ -267,6 +267,13 @@ const Recurring = () => {
                     onChange={(e) => setTotalAmount(e.target.value)}
                     placeholder="Enter total amount"
                   />
+                    <span className="flex items-center justify-between">
+                    <p className="text-[10px] text-colors-Success font-geist font-bold">Transaction fees: 0.5%</p>
+                    <div className="flex items-center gap-1">
+                      <Image src={gas_icon} alt="gas"/>
+                      <p className="text-[10px] text-colors-ButtonOrange font-geist font-bold">Gwei</p>
+                    </div>
+                  </span>
                 </div>
               </>
             )}
@@ -281,7 +288,7 @@ const Recurring = () => {
                       className={`w-full h-12 justify-start text-left font-normal ${!startDate ? "text-muted-foreground" : ""}`}
                     >
                       {startDate ? format(startDate, "dd/MM/yy") : <span>DD/MM/YY</span>}
-                      <Calendar className="ml-auto h-4 w-4" />
+                      <Image src={calendar_Icon} alt="calender" className="ml-auto" />
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0">
@@ -299,7 +306,7 @@ const Recurring = () => {
                       className={`w-full h-12 justify-start text-left font-normal ${!endDate ? "text-muted-foreground" : ""}`}
                     >
                       {endDate ? format(endDate, " ? format(endDate, 'dd/MM/yy") : <span>DD/MM/YY</span>}
-                      <Calendar className="ml-auto h-4 w-4" />
+                      <Image src={calendar_Icon} alt="calender" className="ml-auto" />
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0">
@@ -369,6 +376,7 @@ const Recurring = () => {
                     value={editingRecipient.amount}
                     onChange={(e) => setEditingRecipient({ ...editingRecipient, amount: e.target.value })}
                   />
+
                 </div>
                 <div className="flex justify-end space-x-2">
                   <Button variant="outline" onClick={() => setEditingRecipient(null)}>
