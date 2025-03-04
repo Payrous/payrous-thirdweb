@@ -76,6 +76,7 @@ const config: Config = {
 					colors: {
 						BlueGray: '#304352',
 						ButtonOrange: '#D98837',
+						LightGray: '#E3E3E3',
 						DarkGray: '#A1A1A1',
 						OffWhite: '#F7F5EF',
 						Success: '#399320',

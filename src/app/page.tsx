@@ -84,14 +84,12 @@ const Payrous = () => {
         </div>
 
         {/* social proof */}
-
-        <div className='bg-white py-4 md:py-6 flex flex-col items-center justify-center w-full gap-4 md:gap-6'>
+        <div className='bg-white py-3 md:py-4 flex flex-col items-center justify-center w-full gap-4 md:gap-6'>
           <h1 className='text-colors-DarkGray font-bold text-xl md:text-3xl'>Trusted by</h1>
-          <div className='flex items-center gap-3 lg:gap-10 pb-3 md:pb-4'>
-            <Image src={eth} alt='sponsors' />
-            <Image src={stark} alt='sponsors' />
+          <div className='flex items-center gap-6 lg:gap-10 pb-1 md:pb-2'>
+            <Image src={eth} alt='sponsors' className='w-full h-9 md:h-12'/>
+            <Image src={stark} alt='sponsors' className='w-full h-8 md:h-11'/>
           </div>
-
 
 
           {/* offerpage */}
@@ -212,7 +210,7 @@ const Payrous = () => {
 
           </div>
           <div className='px-4 md:px-0 py-10 w-screen md:max-w-[600px] lg:max-w-[900px] relative overflow-hidden'>
-            <div className='bg-orange-100 rounded-xl'>
+            <div className='bg-orange-100 rounded-2xl'>
               <Accordion type="single" collapsible className='px-10 py-10'>
                 <AccordionItem value="item-1">
                   <AccordionTrigger className='py-5 text-black hover:text-colors-BlueGray'>What is the Payrous App?</AccordionTrigger>
