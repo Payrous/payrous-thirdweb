@@ -11,10 +11,12 @@ import { CheckCircle } from 'lucide-react'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { BsFuelPumpFill } from 'react-icons/bs'
+import Image from 'next/image'
+import { gas_icon } from '@/assets/icons'
 
 interface RecipientDetail {
   walletAddress: string
-  tokenAddress: string
+  tokenType: string
   amount: string
   transactionId: string
 }
@@ -42,7 +44,7 @@ const Instant_payment = () => {
  const [organization, setOrganization] = useState<string>("")
  const [recipient, setRecipient] = useState<string>("")
  const [walletAddress, setWalletAddress] = useState<string>("")
- const [tokenAddress, setTokenAddress] = useState<string>("")
+ const [tokenType, setTokenType] = useState<string>("")
  const [amount, setAmount] = useState<string>("")
  const [remarks, setRemarks] = useState<string>("")
 
@@ -62,7 +64,7 @@ const Instant_payment = () => {
  const isAccountFormValid: boolean =
    organization !== "" &&
    recipient !== "" &&
-   (showAdditionalFields ? walletAddress.trim() !== "" && tokenAddress.trim() !== "" && amount.trim() !== "" : true)
+   (showAdditionalFields ? walletAddress.trim() !== "" && tokenType.trim() !== "" && amount.trim() !== "" : true)
 
  const isBulkFormValid: boolean = bulkOrganization !== ""
 
@@ -75,19 +77,19 @@ const Instant_payment = () => {
    "Organization A": {
      "Recipient 1": {
        walletAddress: "0x1234...5678",
-       tokenAddress: "0xABCD...EF01",
+       tokenType: "ETH",
        amount: "100",
        transactionId: "0xbd20...3571",
      },
      "Recipient 2": {
        walletAddress: "0x8765...4321",
-       tokenAddress: "0xFEDC...BA98",
+       tokenType: "USDT",
        amount: "200",
        transactionId: "0xab12...7890",
      },
      "Recipient 3": {
        walletAddress: "0x2468...1357",
-       tokenAddress: "0x1357...2468",
+       tokenType: "USDC",
        amount: "300",
        transactionId: "0xcd34...5678",
      },
@@ -95,19 +97,19 @@ const Instant_payment = () => {
    "Organization B": {
      "Recipient 1": {
        walletAddress: "0xAAAA...BBBB",
-       tokenAddress: "0xCCCC...DDDD",
+       tokenType: "ETH",
        amount: "150",
        transactionId: "0xef56...9012",
      },
      "Recipient 2": {
        walletAddress: "0xEEEE...FFFF",
-       tokenAddress: "0x1111...2222",
+       tokenType: "ETH",
        amount: "250",
        transactionId: "0xgh78...3456",
      },
      "Recipient 3": {
        walletAddress: "0x3333...4444",
-       tokenAddress: "0x5555...6666",
+       tokenType: "0x5555...6666",
        amount: "350",
        transactionId: "0xij90...7890",
      },
@@ -115,19 +117,19 @@ const Instant_payment = () => {
    "Organization C": {
      "Recipient 1": {
        walletAddress: "0x7777...8888",
-       tokenAddress: "0x9999...0000",
+       tokenType: "USDT",
        amount: "175",
        transactionId: "0xkl12...3456",
      },
      "Recipient 2": {
        walletAddress: "0xAA11...BB22",
-       tokenAddress: "0xCC33...DD44",
+       tokenType: "USDT",
        amount: "275",
        transactionId: "0xmn34...7890",
      },
      "Recipient 3": {
        walletAddress: "0xEE55...FF66",
-       tokenAddress: "0x1122...3344",
+       tokenType: "ETH",
        amount: "375",
        transactionId: "0xop56...1234",
      },
@@ -158,7 +160,7 @@ const Instant_payment = () => {
    if (organization && recipient && recipientDetails[organization]?.[recipient]) {
      const details = recipientDetails[organization][recipient]
      setWalletAddress(details.walletAddress)
-     setTokenAddress(details.tokenAddress)
+     setTokenType(details.tokenType)
      setAmount(details.amount)
      setTransactionId(details.transactionId)
    }
@@ -273,12 +275,12 @@ const Instant_payment = () => {
                   </div>
 
                   <div className="space-y-1">
-                    <Label htmlFor="tokenAddress">Token Address</Label>
+                    <Label htmlFor="tokenType">Token Type</Label>
                     <Input
-                      id="tokenAddress"
-                      value={tokenAddress}
-                      onChange={(e: ChangeEvent<HTMLInputElement>) => setTokenAddress(e.target.value)}
-                      placeholder="Enter token address"
+                      id="tokenType"
+                      value={tokenType}
+                      onChange={(e: ChangeEvent<HTMLInputElement>) => setTokenType(e.target.value)}
+                      placeholder="Enter token type"
                       readOnly
                     />
                   </div>
@@ -292,10 +294,13 @@ const Instant_payment = () => {
                       placeholder="Enter amount"
                       readOnly
                     />
-                    <div className="flex justify-between items-center text-sm mt-1">
-                      <span className="text-green-500 font-medium">Transaction fees: 0.5%</span>
-                      <BsFuelPumpFill className="h-5 w-5 text-orange-500" />
+                    <span className="flex items-center justify-between">
+                    <p className="text-[10px] text-colors-Success font-geist font-bold">Transaction fees: 0.5%</p>
+                    <div className="flex items-center gap-1">
+                      <Image src={gas_icon} alt="gas"/>
+                      <p className="text-[10px] text-colors-ButtonOrange font-geist font-bold">Gwei</p>
                     </div>
+                  </span>
                   </div>
                 </>
               )}
@@ -406,40 +411,40 @@ const Instant_payment = () => {
          <Dialog open={showTransactionDialog} onOpenChange={setShowTransactionDialog}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>Transaction Details</DialogTitle>
-            <DialogDescription>Please review the transaction details before proceeding.</DialogDescription>
+            <DialogTitle className='text-2xl font-bold text-colors-BlueGray'>Transaction Details</DialogTitle>
+            <DialogDescription className='font-normal text-colors-BlueGray font-geist text-lg'>Please review the <span className='text-colors-ButtonOrange'>transaction details</span> before proceeding.</DialogDescription>
           </DialogHeader>
           <div className="space-y-3 py-4">
             {isIndividual ? (
               // Individual recipient details
               <>
                 <div className="grid grid-cols-3 gap-2">
-                  <div className="font-medium">Organization:</div>
+                  <div className="font-medium">Organization</div>
                   <div className="col-span-2">{organization}</div>
                 </div>
                 <div className="grid grid-cols-3 gap-2">
-                  <div className="font-medium">Recipient:</div>
+                  <div className="font-medium">Recipient</div>
                   <div className="col-span-2">{recipient}</div>
                 </div>
                 <div className="grid grid-cols-3 gap-2">
-                  <div className="font-medium">Wallet Address:</div>
+                  <div className="font-medium">Wallet Address</div>
                   <div className="col-span-2 break-all">{walletAddress}</div>
                 </div>
                 <div className="grid grid-cols-3 gap-2">
-                  <div className="font-medium">Token Address:</div>
-                  <div className="col-span-2 break-all">{tokenAddress}</div>
+                  <div className="font-medium">Token Type</div>
+                  <div className="col-span-2 break-all">{tokenType}</div>
                 </div>
                 <div className="grid grid-cols-3 gap-2">
-                  <div className="font-medium">Amount:</div>
+                  <div className="font-medium">Amount</div>
                   <div className="col-span-2">{amount}</div>
                 </div>
                 <div className="grid grid-cols-3 gap-2">
-                  <div className="font-medium">Transaction Fee:</div>
-                  <div className="col-span-2">0.5%</div>
+                  <div className="font-medium">Transaction Fee</div>
+                  <div className="col-span-2">$1.00</div>
                 </div>
                 {remarks && (
                   <div className="grid grid-cols-3 gap-2">
-                    <div className="font-medium">Remarks:</div>
+                    <div className="font-medium">Remark:</div>
                     <div className="col-span-2">{remarks}</div>
                   </div>
                 )}
@@ -460,7 +465,8 @@ const Instant_payment = () => {
                   <div className="col-span-2">{totalAmount}</div>
                 </div>
                 <div className="grid grid-cols-3 gap-2">
-                  <div className="font-medium">Transaction Fee:</div>
+                  <div className="font-medium">Transaction Fee <span className='text-[10px] text-colors-Success font-medium'>
+                   (0.5%)</span></div>
                   <div className="col-span-2">0.5%</div>
                 </div>
                 {bulkRemarks && (
@@ -473,10 +479,10 @@ const Instant_payment = () => {
             )}
           </div>
           <DialogFooter className="flex justify-between sm:justify-between">
-            <Button variant="destructive" onClick={handleDecline}>
+            <Button variant="destructive" onClick={handleDecline} type='submit' className='text-white bg-red-600 hover:bg-red-500 shadow-slate-200 px-8 py-6 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl font-geist w-full'>
               Decline
             </Button>
-            <Button className="bg-green-600 hover:bg-green-700" onClick={handleAccept}>
+            <Button onClick={handleAccept} type='submit' className='text-white bg-colors-Success hover:bg-green-600 shadow-slate-200 px-8 py-6 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl font-geist w-full' >
               Accept
             </Button>
           </DialogFooter>

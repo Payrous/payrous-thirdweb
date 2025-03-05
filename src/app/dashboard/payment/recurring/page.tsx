@@ -348,7 +348,7 @@ const Recurring = () => {
           <DialogContent className="sm:max-w-[550px] max-h-[80vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold text-colors-BlueGray">View Recipients ({recipientCount})</DialogTitle>
-              <DialogDescription className="font-normal text-colors-BlueGray font-geist text-lg">Below are the <span className="text-colors-ButtonOrange">details of recipients</span> in the organization</DialogDescription>
+              <DialogDescription className=" ">Below are the <span className="text-colors-ButtonOrange">details of recipients</span> in the organization</DialogDescription>
             </DialogHeader>
 
             {editingRecipient ? (
