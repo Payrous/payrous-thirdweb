@@ -197,7 +197,7 @@ const Recurring = () => {
       <div>
         <div className='flex items-center justify-between'>
           <h1 className='text-colors-BlueGray font-bold font-source text-lg'>Recurring payment</h1>
-          <h1 className='text-colors-ButtonOrange font-bold font-source text-lg underline underline-offset-8 decoration-colors-ButtonOrange'>Veiw Recurring List</h1>
+          <h1 className='text-colors-ButtonOrange font-bold font-source text-lg underline underline-offset-4 decoration-colors-ButtonOrange'>Veiw Recurring List</h1>
         </div>
         <hr className='w-full text-colors-DarkGray pt-10' />
       </div>

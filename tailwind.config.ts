@@ -80,6 +80,7 @@ const config: Config = {
 						DarkGray: '#A1A1A1',
 						OffWhite: '#F7F5EF',
 						Success: '#399320',
+						LinkColor: '#050091',
 						WhiteSmoke: '#FEFCF5',
 						Warning: '#B2A401',
 						Primay100: '#FFD9B2',	

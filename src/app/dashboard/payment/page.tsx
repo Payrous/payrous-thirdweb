@@ -13,6 +13,7 @@ import { useState, useEffect } from 'react'
 import { BsFuelPumpFill } from 'react-icons/bs'
 import Image from 'next/image'
 import { gas_icon } from '@/assets/icons'
+import { success } from '@/assets/images'
 
 interface RecipientDetail {
   walletAddress: string
@@ -352,18 +353,21 @@ const Instant_payment = () => {
               </div>
 
               <div className="space-y-1">
+                <div className='flex items-center justify-between'>
                 <Label htmlFor="recipientCount">Number of Recipients</Label>
+                {recipientCount && (
+                    <span className="text-[10px] text-colors-ButtonOrange italic cursor-pointer">View recipients</span>
+                  )}
+                </div>
+                
                 <Input
                   id="recipientCount"
                   value={recipientCount}
                   readOnly
-                  placeholder="Auto-generated after selecting organization"
+                  placeholder=""
                 />
-                <div className="flex justify-between items-center text-sm mt-1">
-                  <span className="text-orange-500">Auto-generated based on organization</span>
-                  {recipientCount && (
-                    <span className="text-orange-500 font-medium cursor-pointer">View recipients</span>
-                  )}
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-[10px] text-colors-ButtonOrange italic">Auto-generated based on organization</span>
                 </div>
               </div>
 
@@ -373,10 +377,10 @@ const Instant_payment = () => {
                   id="totalAmount"
                   value={totalAmount}
                   readOnly
-                  placeholder="Auto-generated after selecting organization"
+                  placeholder=""
                 />
-                <div className="flex justify-between items-center text-sm mt-1">
-                  <span className="text-orange-500">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-[10px] text-colors-ButtonOrange italic">
                     Auto-generated based on total amount allocated to each recipient
                   </span>
                 </div>
@@ -493,24 +497,25 @@ const Instant_payment = () => {
         <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader className="flex flex-col items-center">
-            <CheckCircle className="h-16 w-16 text-green-500 mb-2" />
-            <DialogTitle className="text-xl">Congratulations!</DialogTitle>
-            <DialogDescription className="text-center">
+            <Image src={success} alt='' className="mb-2" />
+            <DialogTitle className="text-2xl text-colors-BlueGray font-source font-semibold">Successfull</DialogTitle>
+            <DialogDescription className="text-center py-3">
               {isIndividual ? (
-                <span>
+                <span className='text-colors-BlueGray font-geist font-normal text-base'>
                   Your transaction to <span className="font-bold">{recipient}</span> was successful with transaction ID{" "}
-                  <span className="font-medium">{transactionId}</span>
+                  <span className="font-bold">{transactionId}</span>
                 </span>
               ) : (
-                <span>
+                <span className='text-colors-BlueGray font-geist font-normal text-base'>
                   Your transaction to <span className="font-bold">{bulkOrganization} recipients</span> was successful
-                  with transaction ID <span className="font-medium">{transactionId}</span>
+                  with transaction ID <span className="font-bold">{transactionId}</span>
                 </span>
               )}
             </DialogDescription>
+            <span className='underline underline-offset-4 text-colors-LinkColor font-geist font-normal text-sm py-2'>View details on Blockchain explorer</span>
           </DialogHeader>
           <DialogFooter className="sm:justify-center">
-            <Button className="bg-green-600 hover:bg-green-700" onClick={() => setShowSuccessDialog(false)}>
+            <Button className="text-white bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-8 py-6 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl font-geist w-full" onClick={() => setShowSuccessDialog(false)}>
               Close
             </Button>
           </DialogFooter>
