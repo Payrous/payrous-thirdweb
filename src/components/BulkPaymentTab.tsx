@@ -26,6 +26,7 @@ import Image from "next/image"
 import { checkmark, delete_icon, gas_icon } from "@/assets/icons"
 import { PiWarningFill } from "react-icons/pi"
 import { CgClose } from "react-icons/cg"
+import { document_icon } from "@/assets/icons"
 
 interface TokenOption {
   id: string
@@ -484,7 +485,7 @@ const BulkPaymentTab = () => {
           <Card className="border-none shadow-none">
             <CardContent className="pt-6 space-y-4">
             {showAlert && (
-                  <Alert className="bg-colors-YellowWarnbg text-colors-BlueGray flex items-center justify-between text-center border-2  border-yellow-400 shadow-sm">
+                  <Alert className="bg-colors-YellowWarnbg text-colors-BlueGray flex items-center justify-between text-center border-2 border-yellow-400 shadow-sm">
                     <div className='flex items-center gap-1 lg:gap-3'>
                     <PiWarningFill className="h-6 w-6 text-yellow-400" />
                     <div className="flex-1">
@@ -536,10 +537,10 @@ const BulkPaymentTab = () => {
                       </div>
                     ) : (
                       <div className="space-y-2">
-                        <div className="border-2 border-solid bg-co rounded-md">
+                        <div className="border-2 border-solid bg-colors-LightGreen rounded-md">
                           <div className="bg-colors-BlueGray rounded-md p-4 flex px-6 items-center justify-between">
                             <div className="flex items-center gap-2">
-                              <FileText className="h-5 w-5 text-colors-OffWhite" />
+                            <Image src={document_icon} alt="document" />
                               <span className="text-sm font-medium">{bulkForm.file.name}</span>
                             </div>
                             <Button variant="ghost" size="icon" onClick={handleFileRemove} className="h-6 w-6">

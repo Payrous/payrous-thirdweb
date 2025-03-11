@@ -30,6 +30,7 @@ import calendar_Icon from "@/assets/icons/calendar_icon.svg"
 import gas_icon from "@/assets/icons/gas_icon.svg"
 import checkmark from "@/assets/icons/checkmark.svg"
 import delete_icon from "@/assets/icons/delete_icon.svg"
+import document_icon from "@/assets/icons/document_icon.svg"
 
 
 export{
@@ -64,6 +65,7 @@ export{
     calendar_Icon,
     gas_icon,
     checkmark,
-    delete_icon   
+    delete_icon,
+    document_icon   
 
 }
