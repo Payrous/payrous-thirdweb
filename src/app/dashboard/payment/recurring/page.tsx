@@ -51,7 +51,7 @@ interface BulkRecipientDetails {
 
 const Recurring = () => {
 
-  // Bulk recipient state
+  // State for Bulk recipient
   const [bulkOrganization, setBulkOrganization] = useState<string>("")
   const [recipientCount, setRecipientCount] = useState<string>("")
   const [totalAmount, setTotalAmount] = useState<string>("")
@@ -60,7 +60,7 @@ const Recurring = () => {
   const [endDate, setEndDate] = useState<Date | undefined>(undefined)
   const [frequency, setFrequency] = useState<string>("")
 
-  // Dialog state
+  // Dialog 
   const [showViewRecipientsDialog, setShowViewRecipientsDialog] = useState<boolean>(false)
   const [showSuccessDialog, setShowSuccessDialog] = useState<boolean>(false)
   const [transactionId, setTransactionId] = useState<string>("")
@@ -242,7 +242,7 @@ const Recurring = () => {
                 id="recipientCount"
                 value={recipientCount}
                 readOnly
-                placeholder="Auto-generated after selecting organization"
+                placeholder="Total number of recipient"
               />
               <span className="text-[10px] text-colors-ButtonOrange italic">Auto-generated based on organization</span>
             </div>
@@ -265,7 +265,7 @@ const Recurring = () => {
                     id="totalAmount"
                     value={totalAmount}
                     onChange={(e) => setTotalAmount(e.target.value)}
-                    placeholder="Enter total amount"
+                    placeholder="Overall amount of all recipient"
                   />
                     <span className="flex items-center justify-between">
                     <p className="text-[10px] text-colors-Success font-geist font-bold">Transaction fees: 0.5%</p>

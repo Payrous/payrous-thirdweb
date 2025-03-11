@@ -88,7 +88,8 @@ const config: Config = {
 						OffGreen: '#E7F8EB',
 						RoundedGreen: '#0FBD3B',
 						YellowWarn: '#DFD407',
-						YellowWarnbg: '#FCFBE6'		
+						YellowWarnbg: '#FCFBE6',
+						LightGreen: '#C4F8DD'		
 					}
 				},
 				keyframes: {

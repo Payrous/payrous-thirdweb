@@ -250,7 +250,7 @@ const Instant_payment = () => {
                 <Label htmlFor="recipient">Select Recipient</Label>
                 <Select value={recipient} onValueChange={setRecipient}>
                   <SelectTrigger id="recipient" className={recipient ? "bg-white border-0" : ""}>
-                    <SelectValue placeholder="Select recipient" />
+                    <SelectValue placeholder="Total number of recipient" />
                   </SelectTrigger>
                   <SelectContent>
                     {recipients.map((rec) => (
@@ -416,7 +416,7 @@ const Instant_payment = () => {
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle className='text-2xl font-bold text-colors-BlueGray'>Transaction Details</DialogTitle>
-            <DialogDescription className='font-normal text-colors-BlueGray font-geist text-lg'>Please review the <span className='text-colors-ButtonOrange'>transaction details</span> before proceeding.</DialogDescription>
+            {/* <DialogDescription className='font-normal text-colors-BlueGray font-geist text-lg'>Please review the <span className='text-colors-ButtonOrange'>transaction details</span> before proceeding.</DialogDescription> */}
           </DialogHeader>
           <div className="space-y-3 py-4">
             {isIndividual ? (

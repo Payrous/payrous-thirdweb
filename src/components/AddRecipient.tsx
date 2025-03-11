@@ -111,7 +111,7 @@ const AddRecipient = () => {
                     </div>
                    
                     <Button variant="ghost" className="h-6 w-6 p-0" onClick={() => setShowAlert(false)}>
-                      <CgClose className='w-4 h-4 text-colors-YellowWarn absolute top-2 right-2'/>
+                      <CgClose className='w-4 h-4 text-colors-BlueGray absolute top-2 right-2'/>
                     </Button>
                   </Alert>
                 )}

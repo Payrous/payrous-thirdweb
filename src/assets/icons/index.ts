@@ -28,6 +28,8 @@ import matic from "@/assets/icons/matic.svg"
 import solana from "@/assets/icons/solana.svg"
 import calendar_Icon from "@/assets/icons/calendar_icon.svg"
 import gas_icon from "@/assets/icons/gas_icon.svg"
+import checkmark from "@/assets/icons/checkmark.svg"
+import delete_icon from "@/assets/icons/delete_icon.svg"
 
 
 export{
@@ -60,6 +62,8 @@ export{
     matic,
     solana,
     calendar_Icon,
-    gas_icon   
+    gas_icon,
+    checkmark,
+    delete_icon   
 
 }

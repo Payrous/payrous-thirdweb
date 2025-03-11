@@ -82,7 +82,7 @@ const AddOrg = () => {
               <Label htmlFor="role">Token type</Label>
               <Select disabled={isTokenImport} onValueChange={(value) => setSelected(value)}>
                 <SelectTrigger id="role" className="bg-white data-[state=open]:bg-white">
-                  <SelectValue placeholder="Select a role" />
+                  <SelectValue placeholder="Select token type" />
                 </SelectTrigger>
                 <SelectContent className="max-h-[300px] overflow-hidden">
                   {coin.map((item) => (
@@ -150,7 +150,7 @@ const AddOrg = () => {
         <DialogContent className="sm:max-w-[425px] text-center py-14 flex flex-col justify-center gap-8">
           <DialogHeader className="text-colors-BlueGray ">
             <div className="flex flex-col items-center gap-2">
-              <Image src={successIcon || "/placeholder.svg"} alt="Success" width={64} height={64} />
+              <Image src={successIcon || "/placeholder.svg"} alt="Success" />
               <DialogTitle>Congratulations!</DialogTitle>
             </div>
             <DialogDescription className="text-colors-BlueGray text-center py-4">
