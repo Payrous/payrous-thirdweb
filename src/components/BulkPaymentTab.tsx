@@ -484,21 +484,21 @@ const BulkPaymentTab = () => {
         <TabsContent value="bulk" className="border-none">
           <Card className="border-none shadow-none">
             <CardContent className="pt-6 space-y-4">
-            {showAlert && (
-                  <Alert className="bg-colors-YellowWarnbg text-colors-BlueGray flex items-center justify-between text-center border-2 border-yellow-400 shadow-sm">
-                    <div className='flex items-center gap-1 lg:gap-3'>
+              {showAlert && (
+                <Alert className="bg-colors-YellowWarnbg text-colors-BlueGray flex items-center justify-between text-center border-2 border-yellow-400 shadow-sm">
+                  <div className='flex items-center gap-1 lg:gap-3'>
                     <PiWarningFill className="h-6 w-6 text-yellow-400" />
                     <div className="flex-1">
                       <AlertTitle className="text-colors-BlueGray font-normal font-geist text-sm">It is important to follow the same format as wrongly formatted files will not be processed </AlertTitle>
                       <AlertDescription className='text-colors-BlueGray text-sm font-bold font-geist'>Maximum of 700 recipients</AlertDescription>
                     </div>
-                    </div>
-                   
-                    <Button variant="ghost" className="h-6 w-6 p-0" onClick={() => setShowAlert(false)}>
-                      <CgClose className='w-4 h-4 text-colors-BlueGray absolute top-2 right-2'/>
-                    </Button>
-                  </Alert>
-                )}
+                  </div>
+
+                  <Button variant="ghost" className="h-6 w-6 p-0" onClick={() => setShowAlert(false)}>
+                    <CgClose className='w-4 h-4 text-colors-BlueGray absolute top-2 right-2' />
+                  </Button>
+                </Alert>
+              )}
 
               <form onSubmit={handleBulkSubmit}>
                 <div className="space-y-4">
@@ -526,33 +526,34 @@ const BulkPaymentTab = () => {
 
                     {!bulkForm.file ? (
                       <div
-                        className="border-2 border-dashed border-green-500 bg-green-50 rounded-md p-8 flex flex-col items-center justify-center cursor-pointer"
+                        className="border-2 border-dashed border-green-500 bg-colors-LightGreen bg-opacity-45 rounded-md p-8 flex flex-col md:flex-row items-center justify-center gap-5 cursor-pointer"
                         onClick={() => fileInputRef.current?.click()}
                         onDragOver={handleFileDragOver}
                         onDrop={handleFileDrop}
                       >
                         <Upload className="h-8 w-8 text-green-500 mb-2" />
-                        <p className="text-sm font-medium">Upload, Drag or drop document</p>
-                        <p className="text-xs text-muted-foreground">Supported Format: CSV, JSON</p>
+                        <div className="text-center">
+                          <p className="text-sm font-medium">Upload, Drag or drop document</p>
+                          <p className="text-xs text-muted-foreground">Supported Format: CSV, JSON</p></div>
                       </div>
                     ) : (
                       <div className="space-y-2">
-                        <div className="border-2 border-solid bg-colors-LightGreen rounded-md">
-                          <div className="bg-colors-BlueGray rounded-md p-4 flex px-6 items-center justify-between">
+                        <div className="border-2 border-solid bg-colors-LightGreen bg-opacity-40 w-[470px] h-[88px] rounded-md p-4">
+                          <div className="bg-colors-BlueGray rounded-xl p-3 flex px-6 items-center justify-between">
                             <div className="flex items-center gap-2">
-                            <Image src={document_icon} alt="document" />
-                              <span className="text-sm font-medium">{bulkForm.file.name}</span>
+                              <Image src={document_icon} alt="document" />
+                              <span className="text-sm text-white font-geist font-normal">{bulkForm.file.name}</span>
                             </div>
                             <Button variant="ghost" size="icon" onClick={handleFileRemove} className="h-6 w-6">
-                           <Image src={delete_icon} alt="delete" />
+                              <Image src={delete_icon} alt="delete" />
                             </Button>
                           </div>
                         </div>
 
-                        <div className="space-y-1">
+                        <div className="space-y-1 py-1">
                           {bulkForm.uploadComplete && (
                             <div className="flex items-center gap-1 text-sm text-colors-LinkColor">
-                              <Image src={checkmark} alt="checkmark"/>
+                              <Image src={checkmark} alt="checkmark" />
                               <p className="text-colors-BlueGray">100% <span className="text-[8px]">completed</span></p>
                             </div>
                           )}
