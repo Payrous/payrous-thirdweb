@@ -2,7 +2,7 @@
 import React from "react"
 import { useState } from "react"
 import { Bitcoin, Coins, Wallet } from "lucide-react"
-
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import {
@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { cn } from "@/lib/utils"
+import { success } from "@/assets/images"
 
 interface Organization {
   id: string
@@ -141,8 +142,8 @@ const Deposit_funds = () => {
                   type="number"
                   onChange={(e) => setAmount(e.target.value)}
                 />
-                <p className="text-xs text-muted-foreground flex items-center gap-1">
-                  Available bal: {availableBalance}
+                <p className="text-xs text-colors-Success flex items-center font-bold gap-1">
+                  Available Bal: {availableBalance}
                   {selectedOrg?.tokenType || "ETH"}
                 </p>
               </div>
@@ -168,13 +169,18 @@ const Deposit_funds = () => {
             }
           }}
         >
-          <DialogContent>
+          <DialogContent className="text-center py-14 flex flex-col justify-center gap-8">
             <DialogHeader>
-              <DialogTitle>Successful!</DialogTitle>
-              <DialogDescription>Your organization has been funded successfully.</DialogDescription>
+              <DialogTitle>
+                <div className="flex flex-col items-center gap-3 text-colors-BlueGray text-2xl font-source font-bold">
+                  <Image src={success} alt="Success" />
+                  <p className="py-4">Successfull</p>
+                </div>
+              </DialogTitle>
+              <DialogDescription className="text-center text-lg text-colors-BlueGray font-geist">Your organization has been funded successfully.</DialogDescription>
             </DialogHeader>
             <DialogFooter>
-              <Button onClick={() => setShowDialog(false)} className="bg-colors-ButtonOrange hover:bg-orange-300">
+              <Button onClick={() => setShowDialog(false)} className="w-full text-white bg-colors-ButtonOrange hover:bg-orange-300 shadow-slate-200 px-5 py-6 shadow-[inset_-4px_-4px_10px_0px_rgba(0,0,0,0.4)] rounded-xl">
                 Done
               </Button>
             </DialogFooter>
