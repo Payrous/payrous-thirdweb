@@ -6,28 +6,18 @@ import { avatar } from "@/assets/images";
 
 const Dashboard = () => {
   return (
-    <div className=' text-colors-BlueGray font-geist'>
-      <div className="flex gap-4">
-        <div className="flex items-center gap-3 rounded-2xl border border-gray-300 p-5 relative w-72">
-          <Image src={green} alt='income' />
-          <div>
-            <p className="text-sm">Income</p>
+    <div className='flex flex-col pt-4 px-6 lg:pt-10 lg:px-15 text-colors-BlueGray'>
+      <div className="flex justify-center w-full md:w-80 border border-">
+        <div className="flex gap-3">
+          <Image src={green} alt="income icon"/>
+          <div className="flex flex-col text-left gap-2">
+            <p className="font-normal font-geist text-sm">Income</p>
             <h1 className="font-bold font-source text-2xl">$0</h1>
           </div>
-          <IoEllipsisHorizontal className="top-8 left-60 absolute" />
         </div>
-        <div className="flex items-center gap-3 rounded-2xl border border-gray-300 p-5 relative w-72">
-          <Image src={red} alt='expenditure' />
-          <div>
-            <p className="text-sm">Expenditure</p>
-            <h1 className="font-bold font-source text-2xl">$0</h1>
-          </div>
-          <IoEllipsisHorizontal className="top-8 left-60 absolute" />
+        <div>
+          <IoEllipsisHorizontal className=""/>
         </div>
-      </div>
-      <div className="flex items-center rounded-2xl bg-colors-WhiteSmoke p-5 relative w-72 h-[420px]">
-        <Image src={avatar} alt='avatar' />
-        <IoEllipsisHorizontal className="top-8 left-64 absolute rotate-90" />
       </div>
     </div>
   )

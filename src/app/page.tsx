@@ -87,13 +87,13 @@ const Payrous = () => {
         <div className='bg-white py-3 md:py-4 flex flex-col items-center justify-center w-full gap-4 md:gap-6'>
           <h1 className='text-colors-DarkGray font-bold text-xl md:text-3xl'>Trusted by</h1>
           <div className='flex items-center gap-6 lg:gap-10 pb-1 md:pb-2'>
-            <Image src={eth} alt='sponsors' className='w-full h-9 md:h-12'/>
-            <Image src={stark} alt='sponsors' className='w-full h-8 md:h-11'/>
+            <Image src={eth} alt='sponsors' className='w-full h-9 md:h-12' />
+            <Image src={stark} alt='sponsors' className='w-full h-8 md:h-11' />
           </div>
 
 
           {/* offerpage */}
-          <div className='bg-slate-50 flex flex-col justify-center items-center p-6 md:p-16 lg:px-32' >
+          <div id='features' className='bg-slate-50 flex flex-col justify-center items-center p-6 md:p-16 lg:px-32' >
             <div className='py-12 px-4 md:px-10 bg-orange-100 relative h-full w-full rounded-2xl'>
               <Image
                 alt=""
@@ -125,7 +125,9 @@ const Payrous = () => {
         </div>
 
         {/* how it works component */}
-        <HowItWorks />
+        <div id='how-it-works'>
+          <HowItWorks />
+        </div>
 
         {/* testimonials */}
         <div className='bg-orange-50 flex flex-col items-center justify-center py-8 md:py-10 '>
@@ -192,7 +194,7 @@ const Payrous = () => {
         </div>
 
         {/* faq */}
-        <div className='bg-white text-colors-BlueGray py-10 flex flex-col items-center justify-center relative overflow-hidden'>
+        <div id='faq' className='bg-white text-colors-BlueGray py-10 flex flex-col items-center justify-center relative overflow-hidden'>
           <Image
             src={faqbg}
             alt='faq'
