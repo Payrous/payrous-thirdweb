@@ -342,12 +342,12 @@ const BulkPaymentTab = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <Tabs defaultValue="individual" className="w-[480px]" onValueChange={handleTabChange}>
+      <Tabs defaultValue="individual" className="w-full lg:w-[480px]" onValueChange={handleTabChange}>
         <TabsList className="grid w-full grid-cols-2 h-16 bg-colors-BlueGray">
-          <TabsTrigger value="individual" className="data-[state=active]:w-[224px] data-[state=active]:h-[48px] data-[state=active]:bg-colors-ButtonOrange data-[state=active]:text-colors-OffWhite ml-2">
+          <TabsTrigger value="individual" className="data-[state=active]:lg:w-[224px] data-[state=active]:h-[48px] data-[state=active]:bg-colors-ButtonOrange data-[state=active]:text-colors-OffWhite ml-2">
             Individual Recipient
           </TabsTrigger>
-          <TabsTrigger value="bulk" className="data-[state=active]:w-[224px] data-[state=active]:h-[48px] data-[state=active]:bg-colors-ButtonOrange data-[state=active]:text-colors-OffWhite">
+          <TabsTrigger value="bulk" className="data-[state=active]:lg:w-[224px] data-[state=active]:h-[48px] data-[state=active]:bg-colors-ButtonOrange data-[state=active]:text-colors-OffWhite">
             Bulk Recipient
           </TabsTrigger>
         </TabsList>
@@ -538,7 +538,7 @@ const BulkPaymentTab = () => {
                       </div>
                     ) : (
                       <div className="space-y-2">
-                        <div className="border-2 border-solid bg-colors-LightGreen bg-opacity-40 w-[470px] h-[88px] rounded-md p-4">
+                        <div className="border-2 border-solid bg-colors-LightGreen bg-opacity-40 w-full lg:w-[470px] h-[88px] rounded-md p-4">
                           <div className="bg-colors-BlueGray rounded-xl p-3 flex px-6 items-center justify-between">
                             <div className="flex items-center gap-2">
                               <Image src={document_icon} alt="document" />

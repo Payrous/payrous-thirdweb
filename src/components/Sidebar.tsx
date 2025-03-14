@@ -1,115 +1,198 @@
-'use client'
-import Dashboard from '@/app/dashboard/dashboard/page';
-import Organization from '@/app/dashboard/organization/page';
-import Payment from '@/app/dashboard/payment/page';
-import Image from 'next/image';
-import { dashboard_icon, org, payment_icon, payrous_logo, transact_icon } from '@/assets/icons';
-import Link from 'next/link';
-import React from 'react';
-import { usePathname } from 'next/navigation';
-import { IoCloseSharp } from "react-icons/io5";
-import { VscChromeMinimize } from "react-icons/vsc";
-import { TbSmartHome } from "react-icons/tb";
-import { FaPeopleGroup } from "react-icons/fa6";
-import { IoWalletOutline } from "react-icons/io5";
-import { CgFileDocument } from "react-icons/cg";
-
+"use client"
+import Image from "next/image"
+import Link from "next/link"
+import type React from "react"
+import { useState } from "react"
+import { usePathname, useRouter } from "next/navigation"
+import { IoCloseSharp } from "react-icons/io5"
+import { VscChromeMinimize } from "react-icons/vsc"
+import { TbSmartHome } from "react-icons/tb"
+import { FaPeopleGroup } from "react-icons/fa6"
+import { IoWalletOutline } from "react-icons/io5"
+import { CgFileDocument } from "react-icons/cg"
+import { payrous_logo } from "@/assets/icons"
+import { avatar } from "@/assets/images"
+import { Avatar, AvatarFallback } from "./ui/avatar"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./ui/collapsible"
 
 interface SidebarProps {
-  isMobile: boolean;
-  toggleSidebar: () => void;
-  setSidebarVisible: (visible: boolean) => void;
+  isMobile: boolean
+  toggleSidebar: () => void
+  setSidebarVisible: (visible: boolean) => void
+  userWallet?: string
+  userAvatar?: any
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isMobile, toggleSidebar, setSidebarVisible }) => {
-  const pathname = usePathname();
+const Sidebar: React.FC<SidebarProps> = ({
+  isMobile,
+  toggleSidebar,
+  setSidebarVisible,
+  userWallet = "0x73f7...dd58",
+  userAvatar,
+}) => {
+  const pathname = usePathname()
+  const router = useRouter()
+  const [isPaymentOpen, setIsPaymentOpen] = useState(pathname.startsWith("/dashboard/payment"))
 
   const handleClose = () => {
-    setSidebarVisible(false);
-  };
+    setSidebarVisible(false)
+  }
+
+  // Format wallet address for display
+  const formatWalletAddress = (address: string) => {
+    if (!address) return ""
+    if (address.includes("...")) return address
+    return `${address.substring(0, 6)}...${address.substring(address.length - 4)}`
+  }
+
+  // Handle navigation and close sidebar on mobile/tablet
+  const handleNavigation = (href: string) => {
+    if (isMobile) {
+      setSidebarVisible(false)
+    }
+    router.push(href)
+  }
+
+  // Check if current path is exactly the payment page
+  const isExactPaymentPage = pathname === "/dashboard/payment"
 
   return (
-    <div className={`h-screen bg-colors-BlueGray text-white px-4 py-10 w-60 lg:w-52 lg:rounded-r-[40px] flex flex-col justify-between font-geist text-base ${isMobile ? 'fixed top-0 left-0 z-50' : ''}`}>
-      {/* Close Button for mobile */}
-      <div className='flex md:flex lg:hidden justify-between items-center relative gap-40'>
-        {isMobile && (
-          <button onClick={handleClose} className="absolute top-6 left-2 text-white z-50">
-            <IoCloseSharp className="h-6 w-6" />
-          </button>
-        )}
-        <Link href='/'>
-          <Image src={payrous_logo} alt="payrous-logo" className='w-20 h-20 items-center ml-20' />
-        </Link>
-      </div>
+    <>
+      {/* Backdrop - mobile and tablet */}
+      {isMobile && <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40" onClick={handleClose} />}
 
-      <div className='flex flex-col gap-3'>
-        <Link href='/'>
-          <Image src={payrous_logo} alt="payrous-logo" className='hidden lg:flex w-20 h-20 items-center ml-10' />
-        </Link>
+      <div
+        className={`
+        h-screen bg-colors-BlueGray text-white flex flex-col
+        ${isMobile ? "fixed top-0 left-0 z-50 w-4/5" : "w-60 lg:w-52"}
+        lg:rounded-r-[40px]
+      `}
+      >
+        {/* Sidebar Header */}
+        <div className="sticky top-0 bg-colors-BlueGray pt-4 px-4 pb-2 z-10 lg:rounded-r-[40px]">
+          <div className="flex items-center justify-between relative">
+            {isMobile && (
+              <button onClick={handleClose} className="border rounded-md px-1 text-white">
+                <IoCloseSharp className="h-6 w-6" />
+              </button>
+            )}
+            <Link href="/" className={`${isMobile ? "mx-auto" : ""} ${!isMobile ? "lg:mx-auto" : ""}`}>
+              <Image src={payrous_logo || "/placeholder.svg"} alt="payrous-logo" className="w-20 h-20" />
+            </Link>
+          </div>
 
-        <div className='flex flex-col gap-6 items-start text-sm'>
-          <Link href="/dashboard/dashboard">
-            <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/dashboard' ? 'text-colors-ButtonOrange' : ''}`}>
-              {pathname === '/dashboard/dashboard' && <VscChromeMinimize className='w-0.5 h-5 bg-colors-ButtonOrange mr-2 ' />}
-              <TbSmartHome className='w-4 h-4' />
+          {/* User avatar and wallet address - only on mobile/tablet */}
+          {isMobile && (
+            <div className="flex items-center gap-2 mt-2 mb-4 px-2">
+              <Avatar className="h-10 w-10 border border-white/20">
+                <Image src={avatar} alt="User" />
+                <AvatarFallback className="bg-colors-ButtonOrange text-white">
+                  {userWallet.substring(2, 4).toUpperCase()}
+                </AvatarFallback>
+              </Avatar>
+              <div className="overflow-hidden">
+                <p className="text-sm font-medium truncate text-colors-Success">{formatWalletAddress(userWallet)}</p>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* All sidebar Links */}
+        <div className="flex-1 overflow-y-auto px-4 py-2">
+          <div className="flex flex-col gap-8 md:gap-10 items-start text-sm">
+            <div
+              onClick={() => handleNavigation("/dashboard/dashboard")}
+              className={`flex items-center gap-2 hover:text-colors-ButtonOrange cursor-pointer ${pathname === "/dashboard/dashboard" ? "text-colors-ButtonOrange" : ""}`}
+            >
+              {pathname === "/dashboard/dashboard" && (
+                <VscChromeMinimize className="w-0.5 h-5 bg-colors-ButtonOrange mr-2 " />
+              )}
+              <TbSmartHome className="w-4 h-4" />
               <h1>Dashboard</h1>
             </div>
-          </Link>
-          <Link href="/dashboard/organization">
-            <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/organization' ? 'text-colors-ButtonOrange' : ''}`}>
-              {pathname === '/dashboard/organization' && <VscChromeMinimize className='w-0.5 h-5 bg-colors-ButtonOrange mr-2 ' />}
-              <FaPeopleGroup className='w-4 h-4' />
+
+            <div
+              onClick={() => handleNavigation("/dashboard/organization")}
+              className={`flex items-center gap-2 hover:text-colors-ButtonOrange cursor-pointer ${pathname === "/dashboard/organization" ? "text-colors-ButtonOrange" : ""}`}
+            >
+              {pathname === "/dashboard/organization" && (
+                <VscChromeMinimize className="w-0.5 h-5 bg-colors-ButtonOrange mr-2 " />
+              )}
+              <FaPeopleGroup className="w-4 h-4" />
               <h1>Organization</h1>
             </div>
-          </Link>
-          <Link href="/dashboard/payment">
-            <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/payment' ? 'text-colors-ButtonOrange' : ''}`}>
-              {pathname === '/dashboard/payment' && <VscChromeMinimize className='w-0.5 h-5 bg-colors-ButtonOrange mr-2 ' />}
-              <IoWalletOutline className='w-4 h-4' />
-              <h1>Payment</h1>
-            </div>
-          </Link>
-          {/* subpayment pages */}
-          <Link href="/dashboard/payment/recurring">
-            <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/payment/recurring' ? 'text-colors-ButtonOrange' : ''}`}>
-              {pathname === '/dashboard/payment/recurring'}
-              <h1>Recurring</h1>
-            </div>
-          </Link>
-          <Link href="/dashboard/payment/one-time">
-            <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/payment/one-time' ? 'text-colors-ButtonOrange' : ''}`}>
-              {pathname === '/dashboard/payment/one-time'}
-              <h1>One-Time</h1>
-            </div>
-          </Link>
-          <Link href="/dashboard/payment/deposit-fund">
-            <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/payment/deposit-fund' ? 'text-colors-ButtonOrange' : ''}`}>
-              {pathname === '/dashboard/payment/deposit-fund'}
-              <h1>Deposit Fund</h1>
-            </div>
-          </Link>
-          {/* end of subpayment pages */}
-          <Link href="/dashboard/transaction-history">
-            <div className={`flex items-center gap-2 hover:text-colors-ButtonOrange ${pathname === '/dashboard/transaction-history' ? 'text-colors-ButtonOrange' : ''}`}>
-              {pathname === '/dashboard/transaction-history' && <VscChromeMinimize className='w-0.5 h-5 bg-colors-ButtonOrange mr-2 ' />}
-              <CgFileDocument className='w-4 h-4' />
+
+            {/* Payment link */}
+            <Collapsible open={isPaymentOpen} onOpenChange={setIsPaymentOpen} className="w-full">
+              <div className="flex w-full">
+                {/* Payment parent link */}
+                <div
+                  onClick={() => handleNavigation("/dashboard/payment")}
+                  className={`flex items-center gap-2 hover:text-colors-ButtonOrange cursor-pointer ${isExactPaymentPage ? "text-colors-ButtonOrange" : ""}`}
+                >
+                  {isExactPaymentPage && <VscChromeMinimize className="w-0.5 h-5 bg-colors-ButtonOrange mr-2 " />}
+                  <IoWalletOutline className="w-4 h-4" />
+                  <h1>Payment</h1>
+                </div>
+
+                {/* subpayment links*/}
+                <CollapsibleTrigger className="ml-auto">
+                  <div className="w-5 h-5"></div> {/* Empty div for click area */}
+                </CollapsibleTrigger>
+              </div>
+
+              <CollapsibleContent className="pl-6 mt-2 space-y-2">
+                <div
+                  onClick={() => handleNavigation("/dashboard/payment/recurring")}
+                  className={`flex items-center gap-2 py-1 cursor-pointer hover:text-colors-ButtonOrange ${pathname === "/dashboard/payment/recurring" ? "text-colors-ButtonOrange" : "text-gray-400"}`}
+                >
+                  <h1>Recurring</h1>
+                </div>
+
+                <div
+                  onClick={() => handleNavigation("/dashboard/payment/one-time")}
+                  className={`flex items-center gap-2 py-1 cursor-pointer hover:text-colors-ButtonOrange ${pathname === "/dashboard/payment/one-time" ? "text-colors-ButtonOrange" : "text-gray-400"}`}
+                >
+                  <h1>One-Time</h1>
+                </div>
+
+                <div
+                  onClick={() => handleNavigation("/dashboard/payment/deposit-fund")}
+                  className={`flex items-center gap-2 py-1 cursor-pointer hover:text-colors-ButtonOrange ${pathname === "/dashboard/payment/deposit-fund" ? "text-colors-ButtonOrange" : "text-gray-400"}`}
+                >
+                  <h1>Deposit Fund</h1>
+                </div>
+              </CollapsibleContent>
+            </Collapsible>
+
+            <div
+              onClick={() => handleNavigation("/dashboard/transaction-history")}
+              className={`flex items-center gap-2 hover:text-colors-ButtonOrange cursor-pointer ${pathname === "/dashboard/transaction-history" ? "text-colors-ButtonOrange" : ""}`}
+            >
+              {pathname === "/dashboard/transaction-history" && (
+                <VscChromeMinimize className="w-0.5 h-5 bg-colors-ButtonOrange mr-2 " />
+              )}
+              <CgFileDocument className="w-4 h-4" />
               <h1>Transaction history</h1>
             </div>
-          </Link>
+          </div>
+        </div>
+
+        {/* Sidebar Footer */}
+        <div className="sticky bottom-0 bg-colors-BlueGray px-4 py-4 mt-auto">
+          <h1 className="text-sm">Connected to</h1>
+          <h2 className="font-semibold py-1 text-sm">Ethereum Mainnet</h2>
+          <p className="text-colors-Success font-semibold">{userWallet}</p>
+          <div className="py-4">
+            <button className="rounded-full border border-red-600 text-red-600 py-2 px-10 w-full hover:bg-red-600/10 transition-colors">
+              Disconnect
+            </button>
+          </div>
         </div>
       </div>
+    </>
+  )
+}
 
-      {/* Connected to Ethereum section */}
-      <div>
-        <h1 className='text-sm'>Connected to</h1>
-        <h2 className='font-semibold py-1 text-sm'>Ethereum Mainnet</h2>
-        <p className='text-colors-Success font-semibold'>0x73f7...dd58</p>
-        <div className='py-4'>
-          <button className='rounded-full border border-red-600 text-red-600 py-2 px-10'>Disconnect</button>
-        </div>
-      </div>
-    </div>
-  );
-};
+export default Sidebar
 
-export default Sidebar;

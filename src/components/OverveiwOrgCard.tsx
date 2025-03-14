@@ -20,11 +20,11 @@ const organizations = [
     },
     {
         id: "2",
-        name: "Globex Inc",
+        name: "Platinum",
         walletAddress: "0xabcdef1234567890abcdef1234567890abcdef12",
         tokenType: "USDC",
         availableBalance: "5,678.90 USDC",
-        numberOfRecipients: "128",
+        numberOfRecipients: "632",
     },
 ]
 
@@ -75,7 +75,7 @@ const InlineSelect = ({ label, stacked = false, customStack, onValueChange }: In
                     <SelectTrigger className="h-7 min-h-0 px-2 py-1 bg-white border-0 focus:ring-0 focus:ring-offset-0">
                         <SelectValue placeholder="Select Organization" className="text-xs" />
                     </SelectTrigger>
-                    <SelectContent className="font-bold font-geist">
+                    <SelectContent className="font-geist">
                         {organizations.map((org) => (
                             <SelectItem key={org.id} value={org.id} className="font-bold font-geist">
                                 {org.name}
@@ -87,6 +87,12 @@ const InlineSelect = ({ label, stacked = false, customStack, onValueChange }: In
         </div>
     )
 }
+
+
+interface OverveiwOrgCardProps {
+    userAvatar?: any 
+    userWallet?: string
+  }
 
 const OverveiwOrgCard = () => {
     const [selectedOrg, setSelectedOrg] = useState<string | null>(null)
@@ -103,7 +109,7 @@ const OverveiwOrgCard = () => {
                 <CardContent className="pt-6 px-4">
                     <div className="text-center mb-4">
                         <div className="mx-auto flex items-center justify-center">
-                            <Image src={avatar} alt="Avatar" className="" />
+                            <Image src={avatar || "/placeholder.svg"} alt="Avatar" className="" />
                         </div>
                     </div>
 
